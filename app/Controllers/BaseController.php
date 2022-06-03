@@ -9,6 +9,18 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use App\Models\ArticleAuthorsModel;
+use App\Models\ArticleCommentsModel;
+use App\Models\ArticleRevisionFilesModel;
+use App\Models\ArticlesModel;
+use App\Models\ArticleSubmissionFilesModel;
+use App\Models\ArticleSupplementaryFilesModel;
+use App\Models\AssignmentsModel;
+use App\Models\EditAssignmentsModel;
+use App\Models\FilesModel;
+use App\Models\IssuesModel;
+use App\Models\UsersModel;
+
 /**
  * Class BaseController
  *
@@ -38,6 +50,21 @@ class BaseController extends Controller
     protected $helpers = [];
 
     /**
+     * Inisialisasi model
+     */
+    protected $articleModel;
+    protected $articleAuthorsModel;
+    protected $articleCommentsModel;
+    protected $articleRevisionModel;
+    protected $articleSubmissionFilesModel;
+    protected $articleSupplementaryFilesModel;
+    protected $assignmenstModel;
+    protected $editAssignmentsModel;
+    protected $filesModel;
+    protected $issuesModel;
+    protected $usersModel;
+
+    /**
      * Constructor.
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -48,5 +75,22 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+    }
+
+    public function __construct()
+    {
+        helper(['form', 'url']);
+
+        $this->articleModel = new ArticlesModel();
+        $this->articleAuthorsModel = new ArticleAuthorsModel();
+        $this->articleCommentsModel = new ArticleCommentsModel();
+        $this->articleRevisionModel = new ArticleRevisionFilesModel();
+        $this->articleSubmissionFilesModel = new ArticleSubmissionFilesModel();
+        $this->articleSupplementaryFilesModel = new ArticleSupplementaryFilesModel();
+        $this->assignmenstModel = new AssignmentsModel();
+        $this->editAssignmentsModel = new EditAssignmentsModel();
+        $this->filesModel = new FilesModel();
+        $this->issuesModel = new IssuesModel();
+        $this->usersModel = new UsersModel();
     }
 }
