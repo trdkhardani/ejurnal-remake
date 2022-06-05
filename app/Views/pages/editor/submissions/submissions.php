@@ -108,7 +108,8 @@
 	<tr valign="top">
 		<td>Editor</td>
 		<td>
-			Baru Nanto <a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F12923&amp;to%5B%5D=Baru%20Nanto%20%3Cbarunanto%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=12923" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<?= $editor['username']; ?>
+			<a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F12923&amp;to%5B%5D=Baru%20Nanto%20%3Cbarunanto%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=12923" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 		<td>
 			&nbsp;&nbsp;

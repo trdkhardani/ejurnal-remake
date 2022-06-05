@@ -20,6 +20,14 @@ class recordDecision extends BaseController
                     'decision' => "Accept Submission",
                     'date_recorded' => date('Y-m-d')
                 ]);
+                $editAssignment = $this->editAssignmentsModel->getInsertID();
+                $assignment_id = $this->assignmenstModel->where('article_id', $article_id)->first();
+
+                // dd($assignment_id);
+                $this->assignmenstModel->save([
+                    'assignment_id' => $assignment_id['assignment_id'],
+                    'edit_assignment_id' => $editAssignment,
+                ]);
                 return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
                 // break;
             

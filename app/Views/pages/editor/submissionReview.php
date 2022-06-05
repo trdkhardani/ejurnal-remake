@@ -250,24 +250,31 @@
 	<td class="label">Decision</td>
 	<td class="value">
 		<?php if(isset($decision_editor)) : ?>
-			<?= $decision_editor['decision'] . "    " . $decision_editor['date_recorded']; ?>
+			<?php foreach($decision_editor as $decision) : ?>
+				<?= $decision['decision'] . "    " . $decision['date_recorded'] . "  |  "; ?>
+			<?php endforeach; ?>
 		<?php else : ?>
 			None
 		<?php endif; ?>
 	</td>
 </tr>
+<form method="post" action="/editor/editorReview" enctype="multipart/form-data">
 <tr valign="top">
 	<td class="label">Notify Author</td>
 	<td class="value">
-		<a href="/editor/emailEditorDecisionComment?articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+		<a href="/editor/emailEditorDecisionComment/<?= $article['article_id']; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		&nbsp;&nbsp;&nbsp;&nbsp;
 		Editor/Author Email Record
-		<a href="javascript:openComments('/editor/viewEditorDecisionComments/12687');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments
+		<!-- <a href="javascript:openComments('/editor/viewEditorDecisionComments/12687');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments -->
 		<?php if(isset($decision_editor)) : ?>
 			<?php if(isset($review_version)) : ?>
-				<form action="#">
-					<button>Send to Copyediting</button>
-				</form>
+				<?php if(isset($notified)) : ?>
+					<br>
+					<input type="submit" name="setCopyeditFile" value="Send to Copyediting" class="button" />
+				<?php else : ?>
+					<br>
+					<button disabled="disabled">Send to Copyediting</button>
+				<?php endif; ?>
 			<?php else : ?>
 				<button disabled="disabled">Send to Copyediting</button>
 				<p>Before sending a submission to Copyediting, use Notify Author link to inform author of decision and select the version to be sent.</p>
@@ -278,7 +285,6 @@
 </tr>
 </table>
 
-<form method="post" action="/editor/editorReview" enctype="multipart/form-data">
 	<input type="hidden" name="articleId" value="12687" />
 
 	<table id="table2" class="data" width="100%">
@@ -286,9 +292,16 @@
 			<td width="20%" class="label">Review Version</td>
 			<td width="80%" class="nodata">
 				<?php if(isset($review_version)) : ?>
-					<a href="#">
-						<?= $review_version['file_name']; ?>
-					</a>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $review_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $review_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
 				<?php else : ?>
 					None
 				<?php endif; ?>
@@ -298,9 +311,16 @@
 			<td width="20%" class="label">Author Version</td>
 			<td width="80%" class="nodata">
 				<?php if(isset($author_version)) : ?>
-					<a href="#">
-						<?= $author_version['file_name']; ?>
-					</a>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $author_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $author_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
 				<?php else : ?>
 					None
 				<?php endif; ?>
@@ -310,9 +330,16 @@
 			<td width="20%" class="label">Editor Version</td>
 			<td width="80%" class="nodata">
 				<?php if(isset($editor_version)) : ?>
-					<a href="#">
-						<?= $editor_version['file_name']; ?>
-					</a>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $editor_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $editor_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
 				<?php else : ?>
 					None
 				<?php endif; ?>
@@ -322,7 +349,7 @@
 			<td class="label">&nbsp;</td>
 			<td class="value">
 				<input type="file" name="upload" class="uploadField" />
-				<input type="submit" name="submit" value="Upload" class="button" />
+				<input type="submit" name="upload" value="Upload" class="button" />
 			</td>
 		</tr>
 

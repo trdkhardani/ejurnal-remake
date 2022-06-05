@@ -10,7 +10,7 @@ class Home extends BaseController
     {
         $data = [
             'article' => $this->articlesModel->joinArticleAuthorFiles($article_id)->first(),
-            // 'editor' => $this->usersModel->find(session()->get('user_id')),
+            'editor' => $this->usersModel->find(session()->get('user_id')),
             'editor_id' => session()->get('user_id'),
             'editor_assign' => $this->assignmenstModel->where('article_id', $article_id)->first(),
             'original_file' => $this->articleSubmissionFilesModel->where('article_id', $article_id)->orderBy('article_submission_file_id', 'desc')->first(),

@@ -14,7 +14,7 @@ class EditAssignmentsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['edit_assignment_id', 'article_id', 'decision', 'editor_id'];
+    protected $allowedFields    = ['edit_assignment_id', 'article_id', 'decision', 'editor_id', 'notified'];
 
     // Dates
     protected $useTimestamps = true;
