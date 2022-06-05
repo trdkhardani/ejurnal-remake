@@ -80,4 +80,13 @@ class ArticlesModel extends Model
             // ->join('article_supplementary_files', 'article_supplementary_files.article_id = articles.article_id')
             ->where('articles.article_id', $article_id);
     }
+
+    public function joinReviewer($reviewer_id)
+    {
+        return $this
+            ->select()
+            ->join('assignments', 'assignments.article_id = articles.article_id')
+            ->where('assignments.round', 1)
+            ->where('assignments.reviewer_id', $reviewer_id);
+    }
 }

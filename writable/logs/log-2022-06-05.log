@@ -165,3 +165,63 @@ CRITICAL - 2022-06-05 05:57:16 --> Too few arguments to function App\Controllers
 #3 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
 #5 {main}
+CRITICAL - 2022-06-05 06:10:02 --> Undefined variable $assignments
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'D:\\Program\\xamp...', 38)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Home.php(11): view('pages/reviewer/...')
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Home->index()
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Home))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
+CRITICAL - 2022-06-05 06:15:17 --> Undefined variable $assignments
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'D:\\Program\\xamp...', 38)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Home.php(13): view('pages/reviewer/...', Array)
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Home->index()
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Home))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
+CRITICAL - 2022-06-05 06:17:06 --> Undefined variable $assignments
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'D:\\Program\\xamp...', 38)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Home.php(13): view('pages/reviewer/...', Array)
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Home->index()
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Home))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
+CRITICAL - 2022-06-05 06:17:06 --> Undefined variable $assignments
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'D:\\Program\\xamp...', 38)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Home.php(13): view('pages/reviewer/...', Array)
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Home->index()
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Home))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
+CRITICAL - 2022-06-05 06:17:07 --> Undefined variable $assignments
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'D:\\Program\\xamp...', 38)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Home.php(13): view('pages/reviewer/...', Array)
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Home->index()
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Home))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
