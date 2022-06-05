@@ -53,6 +53,7 @@ $routes->get('/editor/selectReviewer/(:num)', 'Editor\selectReviewer::index/$1')
 $routes->get('/editor/selectReviewer/(:num)/(:num)', 'Editor\selectReviewer::index/$1/$2');
 $routes->get('/editor/viewMetadata/(:num)', 'Editor\viewMetadata::index/$1');
 $routes->get('/editor/submissionEditing/(:num)', 'Editor\submissionEditing::index/$1');
+$routes->add('/editor/notifyReviewer/(:num)/(:num)', 'Editor\notifyReviewer::index/$1/$2');
 
 // Editor routes
 $routes->group("editor", ["filter" => "auth"], function ($routes) {

@@ -139,7 +139,9 @@
 					<?= $assign_reviewer['date_assign_reviewer']; ?>
 				<?php else : ?>
 					<?php if(isset($review_version)) : ?>
-						<button>ok</button>
+						<form action="/editor/notifyReviewer/<?= $assign_reviewer['user_id']; ?>/<?= $article['article_id']; ?>" method="post">
+							<button>ok</button>
+						</form>
 					<?php else : ?>
 						<button disabled="disabled">ok</button>
 					<?php endif; ?>

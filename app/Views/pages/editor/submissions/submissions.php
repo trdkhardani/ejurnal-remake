@@ -42,27 +42,27 @@
 	<tr>
 		<td class="label">Original file</td>
 		<td colspan="2" class="value">
-							<?php if(isset($original_file)) : ?>
-								<a href="/editor/downloadFile/<?= $original_file["file_id"] ?>" class="file"><?= $original_file["file_name"] ?></a>&nbsp;&nbsp;<?= $original_file["date_uploaded"]; ?>
-							<?php else : ?>
-								None
-							<?php endif; ?>
-					</td>
+				<?php if(isset($original_file)) : ?>
+					<a href="/editor/downloadFile/<?= $original_file["file_id"] ?>" class="file"><?= $original_file["file_name"] ?></a>&nbsp;&nbsp;<?= $original_file["date_uploaded"]; ?>
+				<?php else : ?>
+					None
+				<?php endif; ?>
+		</td>
 	</tr>
 	<tr valign="top">
 		<td class="label">Supp. files</td>
 		<td colspan="2" class="value">
-							<?php if(isset($supp_files)) : ?>
-								<?php foreach($supp_files as $supp_file): ?>
-									<a href="/editor/downloadFile/<?= $supp_file["file_id"] ?>" class="file"><?= $supp_file["file_name"] ?></a>&nbsp;&nbsp;<?= $supp_file["date_uploaded"]; ?>
-									<a href="/editor/editSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" class="action">Edit</a>&nbsp;|&nbsp;
-									<a href="/editor/deleteSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a><br>
-								<?php endforeach; ?>
-							<?php else : ?>
-								None
-							<?php endif; ?>
-							<a href="/editor/addSuppFile/<?= $article["article_id"]; ?>" class="action">Add a Supplementary File</a>
-					</td>
+			<?php if(isset($supp_files)) : ?>
+				<?php foreach($supp_files as $supp_file): ?>
+					<a href="/editor/downloadFile/<?= $supp_file["file_id"] ?>" class="file"><?= $supp_file["file_name"] ?></a>&nbsp;&nbsp;<?= $supp_file["date_uploaded"]; ?>
+					<a href="/editor/editSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" class="action">Edit</a>&nbsp;|&nbsp;
+					<a href="/editor/deleteSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a><br>
+				<?php endforeach; ?>
+			<?php else : ?>
+				None
+			<?php endif; ?>
+			<a href="/editor/addSuppFile/<?= $article["article_id"]; ?>" class="action">Add a Supplementary File</a>
+			</td>
 	</tr>
 	<tr>
 		<td class="label">Submitter</td>
@@ -104,7 +104,7 @@
 		<td width="20%">Request</td>
 		<td width="10%">Action</td>
 	</tr>
-	<?php if($editor_assign != NULL) : ?>
+	<?php if(isset($editor_assign)) : ?>
 	<tr valign="top">
 		<td>Editor</td>
 		<td>
@@ -131,8 +131,11 @@
 	</table>
 	<input type="submit" class="button defaultButton" value="Record"/>&nbsp;&nbsp;
 	<a href="/editor/assignEditor/sectionEditor/<?= $article["article_id"]; ?>" class="action">Add Section Editor</a>
-	|&nbsp;<a href="/editor/assignEditor/<?= $article["article_id"]; ?>" class="action">Add Editor</a>
-	|&nbsp;<a href="/editor/assignEditor/<?= $article["article_id"]; ?>/<?= $editor_id ?>" class="action">Add Self</a></form>
+	|&nbsp;<a href="/editor/submissions/assignEditor/<?= $article["article_id"]; ?>" class="action">Add Editor</a>
+	<?php if(isset($editor_assign)): ?>
+	<?php else : ?>
+		|&nbsp;<a href="/editor/submissions/assignEditor/<?= $article["article_id"]; ?>/<?= $editor_id ?>" class="action">Add Self</a></form>
+	<?php endif; ?>
 </div>
 
 <div class="separator"></div>
@@ -142,21 +145,27 @@
 
 <table width="100%" class="data">
 	<tr>
-				<td width="20%" class="label">Status</td>
+		<td width="20%" class="label">Status</td>
 		<td width="30%" class="value">
-			Awaiting assignment
-					</td>
+			<?= $article['status']; ?>
+		</td>
 		<td width="50%" class="value">
-							<a href="/editor/unsuitableSubmission?articleId=<?= $article["article_id"]; ?>" class="action">Reject and Archive Submission</a>
-					</td>
+			<a href="/editor/unsuitableSubmission?articleId=<?= $article["article_id"]; ?>" class="action">Reject and Archive Submission</a>
+		</td>
 	</tr>
 	<tr>
 		<td class="label">Initiated</td>
-		<td colspan="2" class="value">2022-05-25</td>
+		<td colspan="2" class="value"><?= $article['date_created']; ?></td>
 	</tr>
 	<tr>
 		<td class="label">Last modified</td>
-		<td colspan="2" class="value">2022-05-31</td>
+		<td colspan="2" class="value">
+			<?php if(isset($article['date_submit'])) : ?>
+				<?= $article['date_submit']; ?>
+			<?php else : ?>
+				<?= $article['date_created']; ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 </table>
 </div>
@@ -176,21 +185,42 @@
 		<tr valign="top">
 		<td width="20%" class="label">Name</td>
 		<td width="80%" class="value">
-						
-			Cyntia dfdsd Niani <a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20dfdsd%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<?php if(isset($article['first_name'])) : ?>
+				<?= $article['first_name']; ?>
+			<?php elseif (isset($article['first_name']) && $article['middle_name']) : ?>
+				<?= $article['first_name'] . " " . $article['middle_name']; ?>
+			<?php elseif (isset($article['first_name']) && $article['middle_name'] && $article['last_name']) : ?>
+				<?= $article['first_name'] . " " . $article['first_name'] . " " . $article['last_name']; ?>
+			<?php endif; ?>
+			<a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20dfdsd%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 	</tr>
 		<tr valign="top">
 		<td class="label">Affiliation</td>
-		<td class="value">dscs</td>
+		<td class="value">
+			<?php if(isset($article["affiliation"])) : ?>
+				<?= $article["affiliation"]; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 	<tr valign="top">
 		<td class="label">Country</td>
-		<td class="value">Argentina</td>
+		<td class="value">
+			<?php if(isset($article["country"])) : ?>
+				<?= $article["country"]; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 		<tr valign="top">
 		<td class="label">Bio Statement</td>
-		<td class="value">dcdc</td>
+		<td class="value">
+			<?php if(isset($article["bio"])) : ?>
+				<?= $article["bio"]; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 			<tr valign="top">
 			<td colspan="2" class="label">Principal contact for editorial correspondence.</td>
@@ -204,7 +234,12 @@
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">Title</td>
-		<td width="80%" class="value">xczxzcxcz</td>
+		<td width="80%" class="value">
+			<?php if(isset($article['title'])) : ?>
+				<?= $article['title']; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 
 	<tr>
@@ -212,7 +247,12 @@
 	</tr>
 	<tr valign="top">
 		<td class="label">Abstract</td>
-		<td class="value">cdzxcxzcxc</td>
+		<td class="value">
+			<?php if(isset($article['abstract'])) : ?>
+				<?= $article['abstract']; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 </table>
 </div>
@@ -223,14 +263,24 @@
 <table width="100%" class="data">
 					<tr valign="top">
 			<td width="20%" class="label">Keywords</td>
-			<td width="80%" class="value">xczc</td>
+			<td width="80%" class="value">
+				<?php if(isset($article['keyword'])) : ?>
+					<?= $article['keyword']; ?>
+				<?php else : ?>
+				<?php endif; ?>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2" class="separator">&nbsp;</td>
 		</tr>
 				<tr valign="top">
 		<td width="20%" class="label">Language</td>
-		<td width="80%" class="value">en</td>
+		<td width="80%" class="value">
+			<?php if(isset($article['language'])) : ?>
+				<?= $article['language']; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 </table>
 </div>
@@ -241,7 +291,12 @@
 <table width="100%" class="data">
 	<tr valign="top">
 		<td width="20%" class="label">Agencies</td>
-		<td width="80%" class="value">xczxc</td>
+		<td width="80%" class="value">
+			<?php if(isset($article['support'])) : ?>
+				<?= $article['support']; ?>
+			<?php else : ?>
+			<?php endif; ?>
+		</td>
 	</tr>
 </table>
 </div>
@@ -254,7 +309,12 @@
 	<table width="100%" class="data">
 		<tr valign="top">
 			<td width="20%" class="label">References</td>
-			<td width="80%" class="value">xczzcxxcz</td>
+			<td width="80%" class="value">
+				<?php if(isset($article['reference'])) : ?>
+					<?= $article['reference']; ?>
+				<?php else : ?>
+				<?php endif; ?>
+			</td>
 		</tr>
 	</table>
 	</div>

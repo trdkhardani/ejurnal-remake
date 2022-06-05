@@ -135,3 +135,33 @@ CRITICAL - 2022-06-05 04:51:25 --> Undefined variable $post
 #4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2022-06-05 05:44:24 --> Undefined array key "reviewer_id"
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'D:\\Program\\xamp...', 142)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\Program\\xamp...')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(28): view('pages/editor/su...', Array)
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#6 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#7 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#10 {main}
+CRITICAL - 2022-06-05 05:50:06 --> Undefined property: App\Controllers\Editor\SubmissionReview::$reviewerRequestModel
+#0 D:\Program\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'D:\\Program\\xamp...', 20)
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#3 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#6 {main}
+CRITICAL - 2022-06-05 05:52:29 --> Cannot declare class App\Controllers\notifyReviewer, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-06-05 05:57:16 --> Too few arguments to function App\Controllers\Editor\notifyReviewer::index(), 0 passed in D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php on line 832 and exactly 2 expected
+#0 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\notifyReviewer->index()
+#1 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\notifyReviewer))
+#2 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
+#5 {main}

@@ -16,11 +16,15 @@ class SubmissionReview extends BaseController
             if($assign_reviewer = $this->usersModel->where('user_id', $assignment['reviewer_id'])->first()) {
                 $data['assign_reviewer'] = $assign_reviewer;
             }
+
+            if ($assignment['round'] == 1) {
+                $data['request_reviewer'] = $assignment;
+            }
         }
 
         if($review_version = $this->articleRevisionFilesModel->where('article_id', $article_id)->orderBy('article_revision_file_id', 'desc')->first()){
             $data['review_version'] = $review_version;
-        }          
+        }
 
         $data['article'] = $this->articlesModel->joinArticleAuthorFiles($article_id)->first();
         $data['supplementary_files'] = $this->articleSupplementaryFilesModel->where('article_id', $article_id)->first();

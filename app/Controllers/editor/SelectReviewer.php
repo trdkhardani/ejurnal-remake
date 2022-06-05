@@ -24,8 +24,8 @@ class SelectReviewer extends BaseController
             'assignment_id' => $assignment_id['assignment_id'],
             'reviewer_id' => $reviewer_id,
             'date_assign_reviewer' => date('Y-m-d')
-          ]);
-          return redirect()->to(base_url('/editor/submissions/'.$article_id));
+          ]); 
+          return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
         } else {
           echo "<script>";
           echo "alert('belum melakukan assign editor!');";
