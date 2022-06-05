@@ -18,7 +18,7 @@
                   <li id="step5"  class="current">5. Confirmation</li>
                </ul>
                <p>To submit your manuscript to Information Technology Journal click Finish Submission. The submission's principal contact will receive an acknowledgement by email and will be able to view the submission's progress through the editorial process by logging in to the journal web site. Thank you for your interest in publishing with Information Technology Journal.</p>
-               <form method="post" action="/author/saveSubmit/5/<?= $submission_id; ?>">
+               <form method="post" action="/author/saveSubmit/5/<?= $article['article_id']; ?>">
                   <input type="hidden" name="articleId" value="12536" />
                   <h3>File Summary</h3>
                   <table class="listing" width="100%">
@@ -37,22 +37,22 @@
                   </tr>
                   <?php if(isset($main_file)) : ?>
                      <tr valign="top">
-                        <td><?= $main_file['submission_file_id']; ?></td>
+                        <td><?= $main_file['article_submission_file_id']; ?></td>
                         <td><a class="file" href=""><?= $main_file['file_name']; ?></a></td>
                         <td>Submission Main File</td>
                         <td><?= $main_file['file_size']; ?>KB</td>
-                        <td><?= $main_file['uploaded_at']; ?></td>
+                        <td><?= $main_file['date_uploaded']; ?></td>
                      </tr>
                   <?php endif; ?>
 
                   <?php if(isset($support_file)) : ?>
                      <?php foreach($support_file as $supplementary_file) ?>
                      <tr valign="top">
-                        <td><?= $supplementary_file['submission_supplementary_file_id']; ?></td>
+                        <td><?= $supplementary_file['article_supplementary_file_id']; ?></td>
                         <td><a class="file" href=""><?= $supplementary_file['file_name']; ?></a></td>
                         <td>Submission Supplementary File</td>
                         <td><?= $supplementary_file['file_size']; ?>KB</td>
-                        <td><?= $supplementary_file['uploaded_at']; ?></td>
+                        <td><?= $supplementary_file['date_uploaded']; ?></td>
                      </tr>
                   <?php endif; ?>
 

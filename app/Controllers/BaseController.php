@@ -52,10 +52,10 @@ class BaseController extends Controller
     /**
      * Inisialisasi model
      */
-    protected $articleModel;
+    protected $articlesModel;
     protected $articleAuthorsModel;
     protected $articleCommentsModel;
-    protected $articleRevisionModel;
+    protected $articleRevisionFilesModel;
     protected $articleSubmissionFilesModel;
     protected $articleSupplementaryFilesModel;
     protected $assignmenstModel;
@@ -81,10 +81,10 @@ class BaseController extends Controller
     {
         helper(['form', 'url']);
 
-        $this->articleModel = new ArticlesModel();
+        $this->articlesModel = new ArticlesModel();
         $this->articleAuthorsModel = new ArticleAuthorsModel();
         $this->articleCommentsModel = new ArticleCommentsModel();
-        $this->articleRevisionModel = new ArticleRevisionFilesModel();
+        $this->articleRevisionFilesModel = new ArticleRevisionFilesModel();
         $this->articleSubmissionFilesModel = new ArticleSubmissionFilesModel();
         $this->articleSupplementaryFilesModel = new ArticleSupplementaryFilesModel();
         $this->assignmenstModel = new AssignmentsModel();

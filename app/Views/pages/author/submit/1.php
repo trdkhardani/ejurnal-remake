@@ -33,13 +33,12 @@
 
 <div class="separator"></div>
 
-<form id="submit" method="post" action="/author/saveSubmit/1<?= isset($submission_id) ? '/'.$submission_id : '' ?>" onsubmit="return checkSubmissionChecklist()">
+<form id="submit" method="post" action="<?= base_url()?>/author/saveSubmit/1<?= isset($article["article_id"]) ? '/'.$article["article_id"] : '' ?>" onsubmit="return checkSubmissionChecklist()">
 	<input type="hidden" name="sectionId" value="0" />
 	<input type="hidden" name="sectionId" value="84" />
 	<input type="hidden" name="locale" value="en_US" />
 	<script type="text/javascript">
 
-<!--
 function checkSubmissionChecklist() {
 	var elements = document.getElementById('submit').elements;
 	for (var i=0; i < elements.length; i++) {
@@ -55,12 +54,11 @@ function checkSubmissionChecklist() {
 	}
 	return true;
 }
- -->
 
-</script>
+	</script>
 
 
-									<div id="checklist">
+	<div id="checklist">
 			<h3>Submission Checklist</h3>
 			<p>Indicate that this submission is ready to be considered by this journal by checking off the following (comments to the editor can be added below).</p>
 			<table width="100%" class="data">
@@ -108,7 +106,7 @@ The names and email addresses entered in this journal site will be used exclusiv
 <label for="commentsToEditor" >
 	Please Enter 5 Potential Reviewers </label>
 </td>
-	<td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea">Name | Affiliation | Email | Reasons <br/></textarea></td>
+	<td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea"><?= isset($comment["author_to_editor"]) ? $comment["author_to_editor"] : '' ?></textarea></td>
 </tr>
 </table>
 </div>

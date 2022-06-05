@@ -17,7 +17,7 @@
                   <li id="step4"  class="current">4. Upload Supplementary Files</li>
                   <li id="step5" >5. Confirmation</li>
                </ul>
-               <form id="submitForm" method="post" action="/author/saveSubmit/4/<?= $submission_id; ?>" enctype="multipart/form-data">
+               <form id="submitForm" method="post" action="/author/saveSubmit/4/<?= $article['article_id']; ?>" enctype="multipart/form-data">
                   <input type="hidden" name="articleId" value="12536" />
                   <p>This optional step allows Supplementary Files to be added to a submission. The files, which can be in any format, might include (a) research instruments, (b) data sets, which comply with the terms of the study's research ethics review, (c) sources that otherwise would be unavailable to readers, (d) figures and tables that cannot be integrated into the text itself, or other materials that add to the contribution of the work.</p>
                   <table class="listing" width="100%">
@@ -37,11 +37,11 @@
                      <?php if(isset($filesinfo)) :?>
                      <?php foreach($filesinfo as $fileinfo) :?>
                      <tr valign="top">
-                        <td><?= $fileinfo['submission_supplementary_file_id']; ?></td>
+                        <td><?= $fileinfo['article_supplementary_file_id']; ?></td>
                         <td><?= $fileinfo['file_name']; ?></td>
                         <td><?= $fileinfo['original_file_name']; ?></td>
-                        <td><?= $fileinfo['uploaded_at']; ?></td>
-                        <td align="right"><a href="<?= base_url('/') . $fileinfo['file_address'] ?>" class="action">Edit</a>&nbsp;|&nbsp;<a href="https://iptek.its.ac.id/index.php/itj/author/deleteSubmitSuppFile/1981?articleId=12541" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a></td>
+                        <td><?= $fileinfo['date_uploaded']; ?></td>
+                        <td align="right"><a href="<?= base_url('/download/file/') . $fileinfo['file_id']; ?>" class="action">Edit</a>&nbsp;|&nbsp;<a href="https://iptek.its.ac.id/index.php/itj/author/deleteSubmitSuppFile/1981?articleId=12541" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a></td>
                      </tr>
                      <?php endforeach; ?>
                      <?php else : ?>
@@ -65,7 +65,7 @@
                   <div class="separator"></div>
                   <p>
                      <input type="submit" value="Save" class="button defaultButton" />
-                     <input type="button" value="Continue" class="button" onclick="window.location.href='<?= base_url('/author/submit/5/' . $submission_id); ?>'">
+                     <input type="button" value="Continue" class="button" onclick="window.location.href='<?= base_url('/author/submit/5/' . $article['article_id']); ?>'">
                      <input type="button" value="Cancel" class="button" onclick="confirmAction('/author', 'You can complete this submission at a later date by selecting Active Submissions from the Author home.')" />
                   </p>
                </form>

@@ -38,6 +38,22 @@ $routes->match(['get', 'post'], 'login', 'User::login', ["filter" => "noauth"]);
 $routes->group("author", ["filter" => "auth"], function ($routes) {
     $routes->get("/", "Author\Home::index");
 });
+
+$routes->get('/author/submit/', 'Author\Submit::index');
+$routes->get('/author/submit/(:num)', 'Author\Submit::index/$1');
+$routes->get('/author/submit/(:num)/(:num)', 'Author\Submit::index/$1/$2');
+$routes->add('/author/saveSubmit/(:num)', 'Author\SaveSubmit::index/$1');
+$routes->add('/author/saveSubmit/(:num)/(:num)', 'Author\SaveSubmit::index/$1/$2');
+
+$routes->get('/editor/submissions/(:num)', 'Editor\Submissions\Home::index/$1');
+$routes->get('/editor/submissions/assignEditor/(:num)/(:num)', 'Editor\Submissions\AssignEditor::index/$1/$2');
+$routes->get('/editor/submissions/deleteEditAssignment/(:num)', 'Editor\Submissions\DeleteEditAssignment::index/$1');
+$routes->get('/editor/submissionReview/(:num)', 'Editor\SubmissionReview::index/$1');
+$routes->get('/editor/selectReviewer/(:num)', 'Editor\selectReviewer::index/$1');
+$routes->get('/editor/selectReviewer/(:num)/(:num)', 'Editor\selectReviewer::index/$1/$2');
+$routes->get('/editor/viewMetadata/(:num)', 'Editor\viewMetadata::index/$1');
+$routes->get('/editor/submissionEditing/(:num)', 'Editor\submissionEditing::index/$1');
+
 // Editor routes
 $routes->group("editor", ["filter" => "auth"], function ($routes) {
     $routes->get("/", "Editor\Home::index");

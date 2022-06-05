@@ -93,7 +93,7 @@ class User extends BaseController
     {
         // mengambil data user
         $data = [
-            'id_user' => $user['user_id'],
+            'user_id' => $user['user_id'],
             'username' => $user['username'],
             'password' => $user['password'],
             'isLoggedIn' => true,

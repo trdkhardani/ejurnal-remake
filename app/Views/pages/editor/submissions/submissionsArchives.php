@@ -1,15 +1,14 @@
-
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="https://iptek.its.ac.id/index.php/itj/index">Home</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/user" class="hierarchyLink">User</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/editor" class="current">Submissions in Review</a></div>
+	<a href="/index">Home</a> &gt;
+			<a href="/user" class="hierarchyLink">User</a> &gt;
+			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
+			<a href="/editor" class="current">Archives</a></div>
 
-<h2>Submissions in Review</h2>
+<h2>Archives</h2>
 
 
 <div id="content">
@@ -17,18 +16,18 @@
 
 
 <ul class="menu">
-	<li><a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-	<li class="current"><a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInReview">In Review</a></li>
-	<li><a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInEditing">In Editing</a></li>
-	<li><a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsArchives">Archives</a></li>
+	<li><a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+	<li><a href="/editor/submissions/submissionsInReview">In Review</a></li>
+	<li><a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
+	<li class="current"><a href="/editor/submissions/submissionsArchives">Archives</a></li>
 </ul>
 
 <form action="#">
 <ul class="filter">
-	<li>Assigned To: <select name="filterEditor" onchange="location.href='https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInReview?searchField=&searchMatch=&search=&dateFromDay=&dateFromYear=&dateFromMonth=&dateToDay=&dateToYear=&dateToMonth=&dateSearchField=&filterEditor=EDITOR'.replace('EDITOR', this.options[this.selectedIndex].value)" size="1" class="selectMenu"><option label="All Editors" value="0" selected="selected">All Editors</option>
+	<li>Assigned To: <select name="filterEditor" onchange="location.href='/editor/submissions/submissionsArchives?searchField=&searchMatch=&search=&dateFromDay=&dateFromYear=&dateFromMonth=&dateToDay=&dateToYear=&dateToMonth=&dateSearchField=&filterEditor=EDITOR'.replace('EDITOR', this.options[this.selectedIndex].value)" size="1" class="selectMenu"><option label="All Editors" value="0" selected="selected">All Editors</option>
 <option label="Me" value="1">Me</option>
 </select></li>
-	<li>In Section: <select name="filterSection" onchange="location.href='https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInReview?searchField=&searchMatch=&search=&dateFromDay=&dateFromYear=&dateFromMonth=&dateToDay=&dateToYear=&dateToMonth=&dateSearchField=&filterSection=SECTION_ID'.replace('SECTION_ID', this.options[this.selectedIndex].value)" size="1" class="selectMenu"><option label="All Sections" value="0" selected="selected">All Sections</option>
+	<li>In Section: <select name="filterSection" onchange="location.href='/editor/submissions/submissionsArchives?searchField=&searchMatch=&search=&dateFromDay=&dateFromYear=&dateFromMonth=&dateToDay=&dateToYear=&dateToMonth=&dateSearchField=&filterSection=SECTION_ID'.replace('SECTION_ID', this.options[this.selectedIndex].value)" size="1" class="selectMenu"><option label="All Sections" value="0" selected="selected">All Sections</option>
 <option label="Articles" value="84">Articles</option>
 </select></li>
 </ul>
@@ -38,7 +37,7 @@
 
 <script type="text/javascript">
 
-<!--
+// <!--
 function sortSearch(heading, direction) {
  	var submitForm = document.getElementById('submit');
 	submitForm.sort.value = heading;
@@ -49,7 +48,7 @@ function sortSearch(heading, direction) {
 
 </script>
 
-<form method="post" id="submit" action="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInReview">
+<form method="post" id="submit" action="/editor/submissions/submissionsArchives">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -208,174 +207,83 @@ function sortSearch(heading, direction) {
 <div id="submissions">
 <table width="100%" class="listing">
 	<tr>
-		<td colspan="8" class="headseparator">&nbsp;</td>
+		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
 	<tr class="heading" valign="bottom">
 		<td width="5%"><a href="javascript:sortSearch('id','1')" style="font-weight:bold">ID</a></td>
-		<td width="5%"><span class="disabled">MM-DD</span><br /><a href="javascript:sortSearch('submitDate','1')">Submitted</a></td>
+		<td width="15%"><span class="disabled"></span><br /><a href="javascript:sortSearch('submitDate','1')">Submitted</a></td>
 		<td width="5%"><a href="javascript:sortSearch('section','1')">Sec</a></td>
-		<td width="15%"><a href="javascript:sortSearch('authors','1')">Authors</a></td>
+		<td width="25%"><a href="javascript:sortSearch('authors','1')">Authors</a></td>
 		<td width="30%"><a href="javascript:sortSearch('title','1')">Title</a></td>
-		<td width="30%">
-			PeerReview
-			<table width="100%" class="nested">
-				<tr valign="top">
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">Ask</td>
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">Due</td>
-					<td width="34%" style="padding: 0 4px 0 0; font-size: 1.0em">Done</td>
-				</tr>
-			</table>
-		</td>
-		<td width="5%">Ruling</td>
-		<td width="5%">SE</td>
+		<td width="20%" align="right"><a href="javascript:sortSearch('status','1')">Status</a></td>
 	</tr>
 	<tr>
-		<td colspan="8" class="headseparator">&nbsp;</td>
+		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
 	
-				<tr valign="top" class="highlightReviewerNotNotified ">
-		<td>12517</td>
-		<td>04-05</td>
+		
+	<tr valign="top" >
+		<td>12515</td>
+		<td>2022-03-10</td>
+		<td>ART</td>
+		<td>Niani, Siahaan</td>
+		<td><a href="/editor/submissionEditing/12515" class="action">Flexural And Shear Behaviour Of Reinforced Concrete Slab...</a></td>
+		<td align="right">
+										Vol 1, No 1 (2022)	
+					</td>
+	</tr>
+	<tr>
+		<td colspan="6" class="separator">&nbsp;</td>
+	</tr>
+	
+	<tr valign="top" >
+		<td>12892</td>
+		<td>2022-05-10</td>
+		<td>ART</td>
+		<td>Last</td>
+		<td><a href="/editor/submissionEditing/12892" class="action">Pemberitahuan</a></td>
+		<td align="right">
+										Vol 1, No 2 (2022)	
+					</td>
+	</tr>
+	<tr>
+		<td colspan="6" class="separator">&nbsp;</td>
+	</tr>
+	
+	<tr valign="top" >
+		<td>13087</td>
+		<td>2022-06-02</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="https://iptek.its.ac.id/index.php/itj/editor/submissionReview/12517" class="action">tesdt</a></td>
-		<td>
-			<table width="100%">
-																	<tr valign="top">
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="34%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					</tr>
-															</table>
-		</td>
-		<td>
-												&mdash;
-									</td>
-		<td>
-						BN 		</td>
+		<td><a href="/editor/submissionEditing/13087" class="action">as</a></td>
+		<td align="right">
+										Vol 1, No 2 (2022)	
+					</td>
 	</tr>
 	<tr>
-		<td colspan="8" class="separator">&nbsp;</td>
+		<td colspan="6" class="separator">&nbsp;</td>
 	</tr>
-			<tr valign="top">
-		<td>12682</td>
-		<td>04-05</td>
+	
+	<tr valign="top" >
+		<td>13098</td>
+		<td>2022-06-02</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="https://iptek.its.ac.id/index.php/itj/editor/submissionReview/12682" class="action">test</a></td>
-		<td>
-			<table width="100%">
-											<tr valign="top">
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					<td width="34%" style="padding: 0 0 0 0; font-size: 1.0em">&mdash;</td>
-				</tr>
-										</table>
-		</td>
-		<td>
-												&mdash;
-									</td>
-		<td>
-						BN 		</td>
+		<td><a href="/editor/submissionEditing/13098" class="action">feed</a></td>
+		<td align="right">
+										Archived&nbsp;&nbsp;<a href="/editor/deleteSubmission/13098" onclick="return confirm('Are you sure you want to permanently delete this submission?')" class="action">Delete</a>
+					</td>
 	</tr>
 	<tr>
-		<td colspan="8" class="separator">&nbsp;</td>
-	</tr>
-			<tr valign="top" class="highlightReviewerNotNotified ">
-		<td>12718</td>
-		<td>04-07</td>
-		<td>ART</td>
-		<td>Niani</td>
-		<td><a href="https://iptek.its.ac.id/index.php/itj/editor/submissionReview/12718" class="action">adasdadaasdd</a></td>
-		<td>
-			<table width="100%">
-																	<tr valign="top">
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="34%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					</tr>
-															</table>
-		</td>
-		<td>
-												&mdash;
-									</td>
-		<td>
-						BN 		</td>
+		<td colspan="6" class="endseparator">&nbsp;</td>
 	</tr>
 	<tr>
-		<td colspan="8" class="separator">&nbsp;</td>
-	</tr>
-			<tr valign="top" class="highlightReviewerNotNotified ">
-		<td>12748</td>
-		<td>05-12</td>
-		<td>ART</td>
-		<td>ahmad</td>
-		<td><a href="https://iptek.its.ac.id/index.php/itj/editor/submissionReview/12748" class="action">halo</a></td>
-		<td>
-			<table width="100%">
-																	<tr valign="top">
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-						<td width="34%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					</tr>
-															</table>
-		</td>
-		<td>
-												&mdash;
-									</td>
-		<td>
-						BN 		</td>
-	</tr>
-	<tr>
-		<td colspan="8" class="separator">&nbsp;</td>
-	</tr>
-			<tr valign="top">
-		<td>13027</td>
-		<td>05-24</td>
-		<td>ART</td>
-		<td>Niani</td>
-		<td><a href="https://iptek.its.ac.id/index.php/itj/editor/submissionReview/13027" class="action">Submission 13027</a></td>
-		<td>
-			<table width="100%">
-											<tr valign="top">
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">&mdash;</td>
-					<td width="34%" style="padding: 0 0 0 0; font-size: 1.0em">&mdash;</td>
-				</tr>
-										</table>
-		</td>
-		<td>
-												&mdash;
-									</td>
-		<td>
-						BN 		</td>
-	</tr>
-	<tr>
-		<td colspan="8" class="endseparator">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="5" align="left">1 - 5 of 5 Items</td>
-		<td colspan="3" align="right"></td>
+		<td colspan="4" align="left">1 - 4 of 4 Items</td>
+		<td colspan="2" align="right"></td>
 	</tr>
 </table>
 </div>
 
-<br />
-<div id="notes">
-<h4>Notes</h4>
-<ol>
-	<li>Highlighted items indicate action is required by an editor, labelled as follows:
-		<ul>
-			<li class="highlightReviewerNotNotified">A Reviewer has been assigned but not notified by email</li>
-			<li class="highlightNoDecision">All Reviewers have returned with their comments, but no decision is recorded</li>
-			<li class="highlightRevisedCopyUploaded">Author has uploaded a revised manuscript</li>
-			<li class="highlightReviewerConfirmationOverdue">Reviewer is overdue to confirm peer review invitation</li>
-			<li class="highlightReviewerCompletionOverdue">Reviewer is overdue to complete review</li>
-		</ul>
-	</li>
-	<li>"Due" is filled in when reviewer accepts request to review; it displays number of weeks to review's due date or (-) weeks that it is overdue.</li>
-</ol>
-</div>
 
 
 </div><!-- content -->

@@ -11,13 +11,13 @@
             <h2>Step 2. Uploading the Submission</h2>
             <div id="content">
                <ul class="steplist">
-                  <li id="step1" ><a href="/author/submit/1<?= '/' . $submission_id; ?>">1. Start</a></li>
+                  <li id="step1" ><a href="/author/submit/1<?= '/' . $article['article_id']; ?>">1. Start</a></li>
                   <li id="step2"  class="current">2. Upload Submission</li>
                   <li id="step3" >3. Enter Metadata</li>
                   <li id="step4" >4. Upload Supplementary Files</li>
                   <li id="step5" >5. Confirmation</li>
                </ul>
-               <form method="post" action="/author/saveSubmit/2<?= '/' . $submission_id; ?>" enctype="multipart/form-data">
+               <form method="post" action="/author/saveSubmit/2<?= '/' . $article['article_id']; ?>" enctype="multipart/form-data">
                   <input type="hidden" name="articleId" value="12536" />
                   <div id="uploadInstructions">
                      <p>To upload a manuscript to this journal, complete the following steps.</p>
@@ -38,7 +38,7 @@
                      <table class="data" width="100%">
                         <tr valign="top">
                            <td width="20%" class="label">File Name</td>
-                           <td width="80%" class="value"><a href="<?= base_url('') . '/donwload/author/' . $submission_id; ?>"><?= $fileinfo['file_name']; ?></a></td>
+                           <td width="80%" class="value"><a href="<?= base_url('') . '/donwload/author/' . $article['article_id']; ?>"><?= $fileinfo['file_name']; ?></a></td>
                         </tr>
                         <tr valign="top">
                            <td width="20%" class="label">Original file name</td>
@@ -50,7 +50,7 @@
                         </tr>
                         <tr valign="top">
                            <td width="20%" class="label">Date uploaded</td>
-                           <td width="80%" class="value"><?= $fileinfo['updated_at'] ?></td>
+                           <td width="80%" class="value"><?= $fileinfo['date_uploaded'] ?></td>
                         </tr>
                      </table>
                   </div>
@@ -95,7 +95,7 @@
                   <?php endif; ?>
                   <div class="separator"></div>
                   </form>
-                  <p><input type="submit" value="Save and continue" class="button defaultButton" onclick="window.location.href='<?= base_url('/author/submit/3/' . $submission_id); ?>'" /> <input type="button" value="Cancel" class="button" onclick="if (confirm('You can complete this submission at a later date by selecting Active Submissions from the Author home.')) window.location.href='<?= base_url('/author'); ?>';" /></p>
+                  <p><input type="submit" value="Save and continue" class="button defaultButton" onclick="window.location.href='<?= base_url('/author/submit/3/' . $article['article_id']); ?>'" /> <input type="button" value="Cancel" class="button" onclick="if (confirm('You can complete this submission at a later date by selecting Active Submissions from the Author home.')) window.location.href='<?= base_url('/author'); ?>';" /></p>
                
             </div>
             <?php

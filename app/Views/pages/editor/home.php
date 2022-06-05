@@ -3,9 +3,9 @@
 
 <?= $this->section('content'); ?>
               <div id="breadcrumb">
-                <a href="https://iptek.its.ac.id/index.php/itj/index">Home</a> &gt;
-                <a href="https://iptek.its.ac.id/index.php/itj/user" class="hierarchyLink">User</a> &gt;
-                <a href="https://iptek.its.ac.id/index.php/itj/editor" class="current">Editor</a>
+                <a href="/index">Home</a> &gt;
+                <a href="/user" class="hierarchyLink">User</a> &gt;
+                <a href="/editor" class="current">Editor</a>
               </div>
               
               <h2>Editor Home</h2>
@@ -15,10 +15,10 @@
                   <h3>Submissions</h3>
 
                   <ul class="plain">
-                    <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsUnassigned">Unassigned</a>&nbsp;(12)</li>
-                    <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInReview">In Review</a>&nbsp;(5)</li>
-                    <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsInEditing">In Editing</a>&nbsp;(4)</li>
-                    <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/submissions/submissionsArchives">Archives</a></li>
+                    <li>&#187; <a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+                    <li>&#187; <a href="/editor/submissions/submissionsInReview">In Review</a></li>
+                    <li>&#187; <a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
+                    <li>&#187; <a href="/editor/submissions/submissionsArchives">Archives</a></li>
                   </ul>
               </div>
               
@@ -26,7 +26,7 @@
               &nbsp;<br />
 
               <script type="text/javascript">
-                <!--
+                //<!--
                 function sortSearch(heading, direction) {
                   var submitForm = document.getElementById('submit');
                   submitForm.sort.value = heading;
@@ -36,7 +36,7 @@
                 // -->
               </script>
 
-              <form method="post" id="submit" action="https://iptek.its.ac.id/index.php/itj/editor/index/search">
+              <form method="post" id="submit" action="/editor/index/search">
                   <input type="hidden" name="sort" value="id"/>
                   <input type="hidden" name="sortDirection" value="ASC"/>
                   <select name="searchField" size="1" class="selectMenu">
@@ -199,10 +199,10 @@
               <h3>Issues</h3>
 
               <ul class="plain">
-                <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/createIssue">Create Issue</a></li>
-                <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/notifyUsers">Notify Users</a></li>
-                <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/futureIssues">Future Issues</a></li>
-                <li>&#187; <a href="https://iptek.its.ac.id/index.php/itj/editor/backIssues">Back Issues</a></li>
+                <li>&#187; <a href="/editor/createIssue">Create Issue</a></li>
+                <li>&#187; <a href="/editor/notifyUsers">Notify Users</a></li>
+                <li>&#187; <a href="/editor/futureIssues">Future Issues</a></li>
+                <li>&#187; <a href="/editor/backIssues">Back Issues</a></li>
                 
               </ul>
               </div>

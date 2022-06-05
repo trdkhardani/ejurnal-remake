@@ -14,7 +14,7 @@ class ArticlesModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status'];
+    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status', 'date_submit'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,4 +39,45 @@ class ArticlesModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function joinAuthor() {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id=articles.article_id', "right"); 
+    }
+
+    public function joinArticleAW()
+    {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id=articles.article_id')
+            ->where('articles.status', 'Waiting Assignment');
+    }
+
+    public function joinArticleIR()
+    {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id=articles.article_id')
+            ->where('articles.status', 'In Review');
+    }
+
+    public function joinArticleIE()
+    {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id=articles.article_id')
+            ->where('articles.status', 'In Editing');
+    }
+
+    public function joinArticleAuthorFiles($article_id)
+    {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id = articles.article_id')
+            ->join('article_comments', 'article_comments.article_id = articles.article_id')
+            // ->join('article_submission_files', 'article_submission_files.article_id = articles.article_id')
+            // ->join('article_supplementary_files', 'article_supplementary_files.article_id = articles.article_id')
+            ->where('articles.article_id', $article_id);
+    }
 }

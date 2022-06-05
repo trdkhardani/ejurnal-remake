@@ -10,7 +10,7 @@ class AssignmentsModel extends Model
     protected $table            = 'assignments';
     protected $primaryKey       = 'assignment_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = ;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;

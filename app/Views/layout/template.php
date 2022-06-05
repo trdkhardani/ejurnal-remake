@@ -77,7 +77,7 @@
                     <button type="submit">Login</button>
                 <?php endif; ?>
             </form>
-                  <div class="block" id="notification">
+                  <!-- <div class="block" id="notification">
                      <span class="blockTitle">Notifications</span>
                      <ul>
                         <li><a href="<?= base_url(); ?>/notification">View</a></li>
@@ -132,7 +132,7 @@
                         <li><a href="<?= base_url(); ?>/information/authors">For Authors</a></li>
                         <li><a href="<?= base_url(); ?>/information/librarians">For Librarians</a></li>
                      </ul>
-                  </div>
+                  </div> -->
                </div>
             </div>
 <!-- SIDEBAR END -->
@@ -141,7 +141,7 @@
             <div id="main">
                <div id="navbar">
                   <!-- Menu akan berubah ketika user dalam keadaan login -->
-                  <?php if ($userSignedIn == True) : ?>
+                  <?php if (session()->get('isLoggedIn') == true) : ?>
                   <ul class="menu">
                      <li id="home"><a href="<?= base_url(); ?>/">Home</a></li>
                      <li id="about"><a href="<?= base_url(); ?>/about">About</a></li>

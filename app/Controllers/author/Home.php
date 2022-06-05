@@ -8,6 +8,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('pages/author/home');
+        $data['articles'] = $this->articlesModel->joinAuthor()->findAll();
+        return view('pages/author/home', $data);
     }
 }
