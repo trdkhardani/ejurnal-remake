@@ -4,24 +4,24 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ArticleSupplementaryFilesModel extends Model
+class SchedulePublicationsModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'article_supplementary_files';
-    protected $primaryKey       = 'article_supplementary_file_id';
+    protected $table            = 'schedulepublications';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_supplementary_file_id', 'article_id','file_id', 'file_name', 'original_file_name', 'file_size', 'uploader_id'];
+    protected $allowedFields    = [];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'date_uploaded';
-    protected $updatedField  = '';
-    protected $deletedField  = '';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];

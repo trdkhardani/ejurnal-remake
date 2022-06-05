@@ -10,7 +10,7 @@ class IssuesModel extends Model
     protected $table            = 'issues';
     protected $primaryKey       = 'issue_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
