@@ -265,7 +265,7 @@
 		<a href="/editor/emailEditorDecisionComment/<?= $article['article_id']; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		&nbsp;&nbsp;&nbsp;&nbsp;
 		Editor/Author Email Record
-		<!-- <a href="javascript:openComments('/editor/viewEditorDecisionComments/12687');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments -->
+		<a href="javascript:openComments('/editor/viewEditorDecisionComments/<?= $article['article_id']; ?>');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments
 		<?php if(isset($decision_editor)) : ?>
 			<?php if(isset($review_version)) : ?>
 				<?php if(isset($notified)) : ?>
