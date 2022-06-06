@@ -226,6 +226,9 @@ CRITICAL - 2022-06-05 06:17:07 --> Undefined variable $assignments
 #9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
 #10 {main}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
 ERROR - 2022-06-05 06:48:57 --> Error connecting to the database: No connection could be made because the target machine actively refused it
 CRITICAL - 2022-06-05 06:48:57 --> Unable to connect to the database.
 Main connection [MySQLi]: No connection could be made because the target machine actively refused it
@@ -329,12 +332,18 @@ CRITICAL - 2022-06-05 09:14:16 --> Undefined array key "decision"
 #4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
 #5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
 #6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
 #7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
 CRITICAL - 2022-06-05 06:50:05 --> Trying to access array offset on value of type null
 #0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 20)
 #1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -350,13 +359,19 @@ CRITICAL - 2022-06-05 09:14:49 --> Undefined array key "decision"
 #3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
 #4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
 #5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
 #6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
 #7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
 =======
 CRITICAL - 2022-06-05 09:17:21 --> Undefined array key "decision"
 #0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
@@ -390,4 +405,7 @@ CRITICAL - 2022-06-05 09:57:36 --> Array to string conversion
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 9d0e56a96925f46ad46ca5b008d63d827c82efe0
