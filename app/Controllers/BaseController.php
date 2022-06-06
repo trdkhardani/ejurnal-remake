@@ -25,6 +25,7 @@ use App\Models\ArticleLayoutFilesModel;
 use App\Models\CopyedAssignmentsModel;
 use App\Models\LayoutAssignmentsModel;
 use App\Models\SchedulePublicationsModel;
+use App\Models\ReviewAssignmentsModel;
 
 /**
  * Class BaseController
@@ -73,6 +74,7 @@ class BaseController extends Controller
     protected $copyedAssignmentsModel;
     protected $layoutAssignmentsModel;
     protected $schedulePublicationsModel;
+    protected $reviewAssignmentsModel;
 
     /**
      * Constructor.
@@ -107,5 +109,6 @@ class BaseController extends Controller
         $this->copyedAssignmentsModel = new CopyedAssignmentsModel();
         $this->layoutAssignmentsModel = new LayoutAssignmentsModel();
         $this->schedulePublicationsModel = new SchedulePublicationsModel();
+        $this->reviewAssignmentsModel = new ReviewAssignmentsModel();
     }
 }
