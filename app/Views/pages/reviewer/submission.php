@@ -6,10 +6,10 @@
 	<a href="https://iptek.its.ac.id/index.php/itj/index">Home</a> &gt;
 			<a href="https://iptek.its.ac.id/index.php/itj/user" class="hierarchyLink">User</a> &gt;
 			<a href="https://iptek.its.ac.id/index.php/itj/reviewer" class="hierarchyLink">Reviewer</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/reviewer/submission/4596" class="hierarchyLink">#12536</a> &gt;
+			<a href="https://iptek.its.ac.id/index.php/itj/reviewer/submission/4596" class="hierarchyLink">#<?= $article["article_id"]; ?></a> &gt;
 			<a href="https://iptek.its.ac.id/index.php/itj/reviewer/submission/4596" class="current">Review</a></div>
 
-<h2>#<?= $submission["submission_id"]; ?> Review</h2>
+<h2>#<?= $article["article_id"]; ?> Review</h2>
 
 
 <div id="content">
@@ -18,7 +18,7 @@
 
 <script type="text/javascript">
 
-<!--
+// <!--
 function confirmSubmissionCheck() {
 	if (document.getElementById('recommendation').recommendation.value=='') {
 		alert('No recommendation was selected. You must choose a recommendation to submit.');
@@ -108,9 +108,9 @@ function confirmSubmissionCheck() {
 					Accepted
 					<?php endif; ?>
 				<?php else : ?>
-					Will do the review <a href="/reviewer/confirmReview/accept/<?= $assignment["id_assignment"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+					Will do the review <a href="/reviewer/confirmReview/accept/<?= $assignment["assignment_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				Unable to do the review <a href="/reviewer/confirmReview/decline/<?= $assignment["id_assignment"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+				Unable to do the review <a href="/reviewer/confirmReview/decline/<?= $assignment["assignment_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 				<?php endif; ?>
 		</td>
 		
@@ -197,7 +197,7 @@ function confirmSubmissionCheck() {
 				</tr>
 					</table>
 					<form method="post" action="/reviewer/uploadReviewerVersion" enctype="multipart/form-data">
-				<input type="hidden" name="reviewId" value="<?= $assignment["id_assignment"]; ?>" />
+				<input type="hidden" name="reviewId" value="<?= $assignment["assignment_id"]; ?>" />
 				<?php if(isset($reviewer_response)) : ?>
 						<?php if($reviewer_response[0] == 1) : ?>					
 							<input type="file" name="submissionRevisionFile" class="uploadField" />
@@ -226,7 +226,7 @@ function confirmSubmissionCheck() {
 				<td class="label" width="30%">Recommendation</td>
 				<td class="value" width="70%">
 									<form id="recommendation" method="post" action="/reviewer/recordRecommendation">
-					<input type="hidden" name="reviewId" value="<?= $assignment["id_assignment"]; ?>" />
+					<input type="hidden" name="reviewId" value="<?= $assignment["assignment_id"]; ?>" />
 					<?php if(isset($reviewer_recommendation)) : ?>
 						<?php 
 							switch ($reviewer_recommendation) {
