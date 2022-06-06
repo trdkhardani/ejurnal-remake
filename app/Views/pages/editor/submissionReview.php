@@ -111,10 +111,13 @@
 			<td>
 				<h4>Reviewer A</h4>
 			</td>
-			<td>
-				<h4 colspan="4">
+			<td colspan="3">
+				<h4>
 					<?= $assign_reviewer['username']; ?>
 				</h4>
+			</td>
+			<td>
+				<a href="#">Clear Reviewer</a>
 			</td>
 		</tr>
 		<tr>
@@ -219,7 +222,7 @@
 	<td width="80%" class="value">
 		<form method="post" action="/editor/recordDecision">
 			<?php if(isset($review_version)) : ?>
-				<input type="hidden" name="articleId" value="<?= $article['article_id']; ?>" />
+				<input type="hidden" name="article_id" value="<?= $article['article_id']; ?>" />
 					<select name="decision" size="1" class="selectMenu">
 						<option label="Choose One" value="">Choose One</option>
 						<option label="Accept Submission" value="1">Accept Submission</option>
@@ -229,7 +232,7 @@
 					</select>
 				<input type="submit" onclick="return confirm('Are you sure you wish to record this decision?')" name="submit" value="Record Decision" class="button" />
 				<?php else : ?>
-					<input type="hidden" name="articleId" value="<?= $article['article_id']; ?>" />
+					<input type="hidden" name="article_id" value="<?= $article['article_id']; ?>" />
 					<select name="decision" size="1" class="selectMenu" disabled="disabled">
 						<option label="Choose One" value="">Choose One</option>
 						<option label="Accept Submission" value="1">Accept Submission</option>
@@ -239,55 +242,118 @@
 					</select>
 					<input type="submit" onclick="return confirm('Are you sure you wish to record this decision?')" name="submit" value="Record Decision" disabled="disabled" class="button" />
 			<?php endif; ?>
-			&nbsp;&nbsp;Section editor not yet recorded or no review file present.
+			<!-- &nbsp;&nbsp;Section editor not yet recorded or no review file present. -->
 		</form>
 	</td>
 </tr>
 <tr valign="top">
 	<td class="label">Decision</td>
 	<td class="value">
-					None
-			</td>
+		<?php if(isset($decision_editor)) : ?>
+			<?php foreach($decision_editor as $decision) : ?>
+				<?= $decision['decision'] . "    " . $decision['date_recorded'] . "  |  "; ?>
+			<?php endforeach; ?>
+		<?php else : ?>
+			None
+		<?php endif; ?>
+	</td>
 </tr>
+<form method="post" action="/editor/editorReview" enctype="multipart/form-data">
 <tr valign="top">
 	<td class="label">Notify Author</td>
 	<td class="value">
-		
-
-					<a href="/editor/emailEditorDecisionComment?articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
-		
+		<a href="/editor/emailEditorDecisionComment/<?= $article['article_id']; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		&nbsp;&nbsp;&nbsp;&nbsp;
 		Editor/Author Email Record
-					<a href="javascript:openComments('/editor/viewEditorDecisionComments/12687');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments
-			</td>
+		<!-- <a href="javascript:openComments('/editor/viewEditorDecisionComments/12687');" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/comment.gif" width="16" height="14" alt="Comment" /></a>No Comments -->
+		<?php if(isset($decision_editor)) : ?>
+			<?php if(isset($review_version)) : ?>
+				<?php if(isset($notified)) : ?>
+					<br>
+					<input type="submit" name="setCopyeditFile" value="Send to Copyediting" class="button" />
+				<?php else : ?>
+					<br>
+					<button disabled="disabled">Send to Copyediting</button>
+				<?php endif; ?>
+			<?php else : ?>
+				<button disabled="disabled">Send to Copyediting</button>
+				<p>Before sending a submission to Copyediting, use Notify Author link to inform author of decision and select the version to be sent.</p>
+			<?php endif; ?>
+		<?php else : ?>
+		<?php endif; ?>
+	</td>
 </tr>
 </table>
 
-<form method="post" action="/editor/editorReview" enctype="multipart/form-data">
-<input type="hidden" name="articleId" value="12687" />
+	<input type="hidden" name="articleId" value="12687" />
 
-
-
-<table id="table2" class="data" width="100%">
-	
-					<tr valign="top">
-			<td width="20%" class="label">Author Version</td>
-			<td width="80%" class="nodata">None</td>
-		</tr>
-					<tr valign="top">
-			<td width="20%" class="label">Editor Version</td>
-			<td width="80%" class="nodata">None</td>
+	<table id="table2" class="data" width="100%">
+		<tr valign="top">
+			<td width="20%" class="label">Review Version</td>
+			<td width="80%" class="nodata">
+				<?php if(isset($review_version)) : ?>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $review_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $review_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
+				<?php else : ?>
+					None
+				<?php endif; ?>
+			</td>
 		</tr>
 		<tr valign="top">
-		<td class="label">&nbsp;</td>
-		<td class="value">
-			<input type="file" name="upload" class="uploadField" />
-			<input type="submit" name="submit" value="Upload" class="button" />
-		</td>
-	</tr>
+			<td width="20%" class="label">Author Version</td>
+			<td width="80%" class="nodata">
+				<?php if(isset($author_version)) : ?>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $author_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $author_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
+				<?php else : ?>
+					None
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="20%" class="label">Editor Version</td>
+			<td width="80%" class="nodata">
+				<?php if(isset($editor_version)) : ?>
+					<?php if(isset($notified)) : ?>
+						<input type="radio" name="editorDecisionFile">
+						<a href="#">
+							<?= $editor_version['file_name']; ?>
+						</a>
+					<?php else : ?>
+						<a href="#">
+							<?= $editor_version['file_name']; ?>
+						</a>
+					<?php endif; ?>
+				<?php else : ?>
+					None
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td class="label">&nbsp;</td>
+			<td class="value">
+				<input type="file" name="upload" class="uploadField" />
+				<input type="submit" name="upload" value="Upload" class="button" />
+			</td>
+		</tr>
 
-</table>
-
+	</table>
 </form>
 </div>
 

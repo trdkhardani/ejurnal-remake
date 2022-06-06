@@ -4,22 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ArticleSupplementaryFilesModel extends Model
+class CopyedAssignmentsModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'article_supplementary_files';
-    protected $primaryKey       = 'article_supplementary_file_id';
+    protected $table            = 'copyed_assignments';
+    protected $primaryKey       = 'copyed_id';
     protected $useAutoIncrement = true;
     // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_supplementary_file_id', 'article_id','file_id', 'file_name', 'original_file_name', 'file_size', 'uploader_id'];
+    protected $allowedFields    = ['copyed_id', 'article_id', 'editor_id', 'article_copyed_file_id', 'date_request', 'date_acknowledge', 'date_underway', 'date_complete', 'step'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'date_uploaded';
+    protected $createdField  = '';
     protected $updatedField  = '';
     protected $deletedField  = '';
 

@@ -10,7 +10,7 @@ class ArticleRevisionFilesModel extends Model
     protected $table            = 'article_revision_files';
     protected $primaryKey       = 'article_revision_file_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;

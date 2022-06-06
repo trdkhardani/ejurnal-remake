@@ -20,6 +20,11 @@ use App\Models\EditAssignmentsModel;
 use App\Models\FilesModel;
 use App\Models\IssuesModel;
 use App\Models\UsersModel;
+use App\Models\ArticleCopyedFilesModel;
+use App\Models\ArticleLayoutFilesModel;
+use App\Models\CopyedAssignmentsModel;
+use App\Models\LayoutAssignmentsModel;
+use App\Models\SchedulePublicationsModel;
 
 /**
  * Class BaseController
@@ -63,6 +68,11 @@ class BaseController extends Controller
     protected $filesModel;
     protected $issuesModel;
     protected $usersModel;
+    protected $articleCopyedFilesModel;
+    protected $articleLayoutFilesModel;
+    protected $copyedAssignmentsModel;
+    protected $layoutAssignmentsModel;
+    protected $schedulePublicationsModel;
 
     /**
      * Constructor.
@@ -92,5 +102,10 @@ class BaseController extends Controller
         $this->filesModel = new FilesModel();
         $this->issuesModel = new IssuesModel();
         $this->usersModel = new UsersModel();
+        $this->articleCopyedFilesModel = new ArticleCopyedFilesModel();
+        $this->articleLayoutFilesModel = new ArticleLayoutFilesModel();
+        $this->copyedAssignmentsModel = new CopyedAssignmentsModel();
+        $this->layoutAssignmentsModel = new LayoutAssignmentsModel();
+        $this->schedulePublicationsModel = new SchedulePublicationsModel();
     }
 }

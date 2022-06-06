@@ -10,11 +10,11 @@ class EditAssignmentsModel extends Model
     protected $table            = 'edit_assignments';
     protected $primaryKey       = 'edit_assignment_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['edit_assignment_id', 'article_id', 'decision', 'editor_id'];
+    protected $allowedFields    = ['edit_assignment_id', 'article_id', 'decision', 'editor_id', 'notified'];
 
     // Dates
     protected $useTimestamps = true;
