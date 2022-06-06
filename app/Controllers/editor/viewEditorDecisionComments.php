@@ -8,6 +8,7 @@ class viewEditorDecisionComments extends BaseController
 {
     public function index($article_id)
     {
-        return view('pages/editor/home');
+        $comment_id = $this->articleCommentsModel->getCommentId($article_id);
+        return view('pages/editor/viewEditorDecisionComments');
     }
 }

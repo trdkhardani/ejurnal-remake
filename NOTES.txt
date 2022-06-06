@@ -1,0 +1,39 @@
+EDITOR
+    UNASSIGNED
+        Delete : add section editor
+        Delete : last modified
+        Delete : last modified
+        Add : status -> archived -> reject
+
+    REVIEW
+        article_revision_files
+            type :
+                1 -> review version
+                2 -> editor
+                3 -> author
+                4 -> reviewer
+        sebelum select reviewer -> decision disabled
+        SELECT REVIEWER
+            delete : done
+            delete : weeks
+        
+        ROUND -> tinyint
+            0 : belum di assign
+            1 : sudah di assign
+        KLIK REQUEST
+            add reviewer_id
+
+        Comment dr Editor
+            hanya bisa 1 kali
+
+        PeerReviewer
+            yg dipake Clear Reviewer
+            tidak pakai Cancel Request
+
+        PeerReviewer
+            table : yang dipakai
+                Recommendation
+                Review
+                Uploaded Files
+            Scr default -> None
+            Menunggu dari reviewer

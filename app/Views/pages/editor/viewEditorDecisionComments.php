@@ -1,5 +1,4 @@
 
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,7 +82,7 @@
 <body>
 
 <script type="text/javascript">
-<!--
+// <!--
 	if (self.blur) { self.focus(); }
 // -->
 </script>
@@ -99,7 +98,7 @@
 
 <script type="text/javascript">
 
-<!--
+// <!--
 // In case this page is the result of a comment submit, reload the parent
 // so that the necessary buttons will be activated.
 window.opener.location.reload();
@@ -117,33 +116,32 @@ window.opener.location.reload();
 <br />
 
 
-<form method="post" action="https://iptek.its.ac.id/index.php/itj/editor/postEditorDecisionComment">
-			<input type="hidden" name="articleId" value="12540" />
-	
+<form method="post" action="/editor/postEditorDecisionComment">
+    <input type="hidden" name="article_id" value="12540" />
 
-<div id="new">
+    <div id="new">
 
-<table class="data" width="100%">
-<tr valign="top">
-	<td class="label">
-<label for="commentTitle" >
-	Subject </label>
-</td>
-	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="a" size="50" maxlength="255" class="textField" /></td>
-</tr>
-<tr valign="top">
-	<td class="label">
-<label for="comments" >
-	Add Comment </label>
-</td>
-	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea"></textarea></td>
-</tr>
-</table>
+    <table class="data" width="100%">
+    <tr valign="top">
+    	<td class="label">
+    <label for="commentTitle" >
+    	Subject </label>
+    </td>
+    	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="a" size="50" maxlength="255" class="textField" /></td>
+    </tr>
+    <tr valign="top">
+    	<td class="label">
+    <label for="comments" >
+    	Add Comment </label>
+    </td>
+    	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea"></textarea></td>
+    </tr>
+    </table>
 
-<p><input type="submit" name="save" value="Save" class="button defaultButton" /> <input type="button" value="Close" class="button" onclick="window.close()" /></p>
+    <p><input type="submit" name="save" value="Save" class="button defaultButton" /> <input type="button" value="Close" class="button" onclick="window.close()" /></p>
 
-<p><span class="formRequired">* Denotes required field</span></p>
-</div>
+    <p><span class="formRequired">* Denotes required field</span></p>
+    </div>
 </form>
 
 

@@ -55,6 +55,7 @@ $routes->get('/editor/viewMetadata/(:num)', 'Editor\viewMetadata::index/$1');
 $routes->get('/editor/submissionEditing/(:num)', 'Editor\submissionEditing::index/$1');
 $routes->add('/editor/notifyReviewer/(:num)/(:num)', 'Editor\notifyReviewer::index/$1/$2');
 $routes->get('/editor/emailEditorDecisionComment/(:num)', 'Editor\emailEditorDecisionComment::index/$1');
+$routes->get('/editor/viewEditorDecisionComments/(:num)', 'Editor\viewEditorDecisionComments::index/$1');
 
 $routes->get('/reviewer/submission/(:num)', 'Reviewer\Submission::index/$1');
 $routes->get('/reviewer/confirmReview/accept/(:num)', 'Reviewer\ConfirmReview::accept/$1');
