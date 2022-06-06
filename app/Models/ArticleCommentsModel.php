@@ -10,7 +10,7 @@ class ArticleCommentsModel extends Model
     protected $table            = 'article_comments';
     protected $primaryKey       = 'article_comment_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;

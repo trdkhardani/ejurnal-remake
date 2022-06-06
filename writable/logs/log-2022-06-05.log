@@ -235,6 +235,99 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\submissions\SubmissionsInReview.php(12): CodeIgniter\BaseModel->findAll()
 #5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\Submissions\SubmissionsInReview->index()
 #6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\Submissions\SubmissionsInReview))
+=======
+CRITICAL - 2022-06-05 08:57:11 --> Undefined property: App\Controllers\Editor\recordDecision::$editAssignmentModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\recordDecision.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\recordDecision->index()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\recordDecision))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-05 08:57:39 --> Duplicate entry '0' for key 'PRIMARY'
+CRITICAL - 2022-06-05 08:57:39 --> Duplicate entry '0' for key 'PRIMARY'
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ed...', 0)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ed...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ed...')
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ed...', Array, false)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\recordDecision.php(21): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\recordDecision->index()
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\recordDecision))
+#10 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2022-06-05 08:58:08 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#3 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 09:01:46 --> Undefined property: App\Controllers\Editor\recordDecision::$assignmentsModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\recordDecision.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\recordDecision->index()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\recordDecision))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-05 09:02:16 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#3 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 09:02:37 --> Undefined array key "assignment_id"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\recordDecision.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\recordDecision->index()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\recordDecision))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-05 09:03:37 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#3 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 09:04:03 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#3 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 09:14:16 --> Undefined array key "decision"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
 #7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
@@ -246,7 +339,48 @@ CRITICAL - 2022-06-05 06:50:05 --> Trying to access array offset on value of typ
 #3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
 #4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(32): view('pages/editor/su...', Array)
 #5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('12541')
+=======
+CRITICAL - 2022-06-05 09:14:49 --> Undefined array key "decision"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(36): view('pages/editor/su...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
 #6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+=======
+CRITICAL - 2022-06-05 09:17:21 --> Undefined array key "decision"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(37): view('pages/editor/su...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-05 09:46:12 --> Undefined array key "notified"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\SubmissionReview))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-05 09:57:36 --> Array to string conversion
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissions\submissions.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 111)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\submissions\Home.php(21): view('pages/editor/su...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\Submissions\Home->index('5')
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\Submissions\Home))
 #7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
