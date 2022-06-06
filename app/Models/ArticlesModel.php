@@ -10,11 +10,11 @@ class ArticlesModel extends Model
     protected $table            = 'articles';
     protected $primaryKey       = 'article_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status', 'date_submit'];
+    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status', 'date_submit', 'issue_id'];
 
     // Dates
     protected $useTimestamps = true;

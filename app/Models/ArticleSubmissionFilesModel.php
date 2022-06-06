@@ -10,7 +10,7 @@ class ArticleSubmissionFilesModel extends Model
     protected $table            = 'article_submission_files';
     protected $primaryKey       = 'article_submission_file_id';
     protected $useAutoIncrement = true;
-    protected $insertID         = 0;
+    // protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;

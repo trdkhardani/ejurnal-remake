@@ -20,6 +20,17 @@ class SubmissionReview extends BaseController
             if ($assignment['round'] == 1) {
                 $data['request_reviewer'] = $assignment;
             }
+
+            if ($decision = $this->editAssignmentsModel->where('article_id', $article_id)->findAll()) {
+                $data['decision_editor'] = $decision;
+                $data['decision_select'] = $decision = $this->editAssignmentsModel->where('article_id', $article_id)->first();
+            }
+
+            if($notified = $this->editAssignmentsModel->where('article_id', $article_id)->first()) {
+                if ($notified['notified'] == 1) {
+                    $data['notified'] = $notified;
+                }
+            }
         }
 
         if($review_version = $this->articleRevisionFilesModel->where('article_id', $article_id)->orderBy('article_revision_file_id', 'desc')->first()){
