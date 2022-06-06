@@ -225,6 +225,17 @@ CRITICAL - 2022-06-05 06:17:07 --> Undefined variable $assignments
 #8 D:\Program\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 D:\Program\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\Program\\xamp...')
 #10 {main}
+ERROR - 2022-06-05 06:48:57 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-05 06:48:57 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\submissions\SubmissionsInReview.php(12): CodeIgniter\BaseModel->findAll()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\Submissions\SubmissionsInReview->index()
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Editor\Submissions\SubmissionsInReview))
+=======
 CRITICAL - 2022-06-05 08:57:11 --> Undefined property: App\Controllers\Editor\recordDecision::$editAssignmentModel
 #0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\recordDecision.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 24)
 #1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\recordDecision->index()
@@ -321,6 +332,14 @@ CRITICAL - 2022-06-05 09:14:16 --> Undefined array key "decision"
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2022-06-05 06:50:05 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/editor/su...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\editor\SubmissionReview.php(32): view('pages/editor/su...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Editor\SubmissionReview->index('12541')
+=======
 CRITICAL - 2022-06-05 09:14:49 --> Undefined array key "decision"
 #0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
 #1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -333,6 +352,7 @@ CRITICAL - 2022-06-05 09:14:49 --> Undefined array key "decision"
 #8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+=======
 CRITICAL - 2022-06-05 09:17:21 --> Undefined array key "decision"
 #0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\editor\submissionReview.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 236)
 #1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')

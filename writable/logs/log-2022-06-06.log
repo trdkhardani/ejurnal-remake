@@ -1,0 +1,103 @@
+CRITICAL - 2022-06-06 00:11:19 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 15)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:14:15 --> Undefined property: App\Controllers\Reviewer\Submission::$assignmentsModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-06 00:15:05 --> Unknown column 'submission_supplementary_file_id' in 'order clause'
+CRITICAL - 2022-06-06 00:15:05 --> Unknown column 'submission_supplementary_file_id' in 'order clause'
+#0 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(19): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#8 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-06 00:15:30 --> Undefined array key "id_assignment"
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:16:04 --> Undefined property: App\Controllers\Reviewer\Submission::$reviewerResponseModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:16:06 --> Undefined property: App\Controllers\Reviewer\Submission::$reviewerResponseModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:17:23 --> Undefined property: App\Controllers\Reviewer\Submission::$reviewerResponseModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:17:32 --> Undefined property: App\Controllers\Reviewer\Submission::$submissionRevisionFileModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:18:51 --> Undefined property: App\Controllers\Reviewer\Submission::$reviewerRecommendationModel
+#0 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 31)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 00:18:59 --> Undefined variable $submission
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\submission.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(38): view('pages/reviewer/...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-06 00:19:38 --> Undefined variable $submission
+#0 C:\xampp\htdocs\ejurnal-remake\app\Views\pages\reviewer\submission.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12)
+#1 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('pages/reviewer/...', Array, true)
+#4 C:\xampp\htdocs\ejurnal-remake\app\Controllers\reviewer\Submission.php(38): view('pages/reviewer/...', Array)
+#5 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Reviewer\Submission->index('5')
+#6 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reviewer\Submission))
+#7 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ejurnal-remake\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ejurnal-remake\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

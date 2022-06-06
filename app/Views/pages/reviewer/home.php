@@ -3,10 +3,10 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="https://iptek.its.ac.id/index.php/itj/index">Home</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/user" class="hierarchyLink">User</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/reviewer" class="hierarchyLink">Reviewer</a> &gt;
-			<a href="https://iptek.its.ac.id/index.php/itj/reviewer" class="current">Active Submissions</a></div>
+	<a href="/index">Home</a> &gt;
+			<a href="/user" class="hierarchyLink">User</a> &gt;
+			<a href="/reviewer" class="hierarchyLink">Reviewer</a> &gt;
+			<a href="/reviewer" class="current">Active Submissions</a></div>
 
 <h2>Active Submissions</h2>
 
@@ -16,8 +16,8 @@
 
 
 <ul class="menu">
-	<li class="current"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index/active">Active</a></li>
-	<li><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index/completed">Archive</a></li>
+	<li class="current"><a href="/reviewer/index/active">Active</a></li>
+	<li><a href="/reviewer/index/completed">Archive</a></li>
 </ul>
 
 <br />
@@ -26,12 +26,12 @@
 <table class="listing" width="100%">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" valign="bottom">
-		<td width="5%"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=id&amp;sortDirection=1">ID</a></td>
-		<td width="5%"><span class="disabled">MM-DD</span><br /><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=assignDate&amp;sortDirection=1">Assigned</a></td>
-		<td width="5%"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=section&amp;sortDirection=1">Sec</a></td>
-		<td width="70%"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=title&amp;sortDirection=1" style="font-weight:bold">Title</a></td>
-		<td width="5%"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=dueDate&amp;sortDirection=1">Due</a></td>
-		<td width="10%"><a href="https://iptek.its.ac.id/index.php/itj/reviewer/index?sort=round&amp;sortDirection=1">Review Round</a></td>
+		<td width="5%"><a href="/reviewer/index?sort=id&amp;sortDirection=1">ID</a></td>
+		<td width="5%"><span class="disabled">MM-DD</span><br /><a href="/reviewer/index?sort=assignDate&amp;sortDirection=1">Assigned</a></td>
+		<td width="5%"><a href="/reviewer/index?sort=section&amp;sortDirection=1">Sec</a></td>
+		<td width="70%"><a href="/reviewer/index?sort=title&amp;sortDirection=1" style="font-weight:bold">Title</a></td>
+		<td width="5%"><a href="/reviewer/index?sort=dueDate&amp;sortDirection=1">Due</a></td>
+		<td width="10%"><a href="/reviewer/index?sort=round&amp;sortDirection=1">Review Round</a></td>
 	</tr>
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 
