@@ -2,23 +2,23 @@
 
 <?= $this->section('content'); ?>
             <div id="breadcrumb">
-               <a href="/index">Home</a> &gt;
-               <a href="/user" class="hierarchyLink">User</a> &gt;
-               <a href="/author" class="hierarchyLink">Author</a> &gt;
-               <a href="/author" class="hierarchyLink">Submissions</a> &gt;
-               <a href="/author/submit/3/<?= $article['article_id']; ?>" class="current">New Submission</a>
+               <a href="<?= base_url(); ?>/index">Home</a> &gt;
+               <a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Author</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Submissions</a> &gt;
+               <a href="<?= base_url(); ?>/author/submit/3/<?= $article['article_id']; ?>" class="current">New Submission</a>
             </div>
             <h2>Step 3. Entering the Submission's Metadata</h2>
             <div id="content">
                <ul class="steplist">
-                  <li id="step1" ><a href="/author/submit/1/<?= $article['article_id']; ?>">1. Start</a></li>
-                  <li id="step2" ><a href="/author/submit/2/<?= $article['article_id']; ?>">2. Upload Submission</a></li>
+                  <li id="step1" ><a href="<?= base_url(); ?>/author/submit/1/<?= $article['article_id']; ?>">1. Start</a></li>
+                  <li id="step2" ><a href="<?= base_url(); ?>/author/submit/2/<?= $article['article_id']; ?>">2. Upload Submission</a></li>
                   <li id="step3"  class="current">3. Enter Metadata</li>
                   <li id="step4" >4. Upload Supplementary Files</li>
                   <li id="step5" >5. Confirmation</li>
                </ul>
                <div class="separator"></div>
-               <form name="addArticle" method="post" action="/author/saveSubmit/3/<?= $article['article_id']; ?>">
+               <form name="addArticle" method="post" action="<?= base_url(); ?>/author/saveSubmit/3/<?= $article['article_id']; ?>">
                   <input type="hidden" name="article[articleId]" value="<?php if(isset($article['article_id'])) echo $article['article_id']; ?>" />
                   <div id="authors">
                      <h3>Authors</h3>

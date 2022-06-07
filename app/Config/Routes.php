@@ -56,10 +56,12 @@ $routes->get('/editor/submissionEditing/(:num)', 'Editor\submissionEditing::inde
 $routes->add('/editor/notifyReviewer/(:num)/(:num)', 'Editor\notifyReviewer::index/$1/$2');
 $routes->get('/editor/emailEditorDecisionComment/(:num)', 'Editor\emailEditorDecisionComment::index/$1');
 $routes->get('/editor/viewEditorDecisionComments/(:num)', 'Editor\viewEditorDecisionComments::index/$1');
+$routes->get('/editor/deleteComment/(:num)', 'Editor\deleteComment::index/$1');
 
 $routes->get('/reviewer/submission/(:num)', 'Reviewer\Submission::index/$1');
 $routes->get('/reviewer/confirmReview/accept/(:num)', 'Reviewer\ConfirmReview::accept/$1');
 $routes->get('/reviewer/confirmReview/decline/(:num)', 'Reviewer\ConfirmReview::decline/$1');
+$routes->get('/reviewer/viewPeerReviewComments/(:num)', 'Reviewer\ViewPeerReviewComments/$1');
 
 // Editor routes
 $routes->group("editor", ["filter" => "auth"], function ($routes) {

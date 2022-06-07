@@ -3,12 +3,12 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor/submission/12687" class="hierarchyLink">#12687</a> &gt;
-			<a href="/editor/submissionEditing/12687" class="current">Editing</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/12687" class="hierarchyLink">#12687</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissionEditing/12687" class="current">Editing</a></div>
 
 <h2>#12687 Editing</h2>
 
@@ -18,10 +18,10 @@
 
 
 <ul class="menu">
-	<li><a href="/editor/submissions/<?= $article['article_id']; ?>">Summary</a></li>
-	<li class="current"><a href="/editor/submissionReview/<?= $article['article_id']; ?>">Review</a></li>
-	<li><a href="/editor/submissionEditing/<?= $article['article_id']; ?>">Editing</a></li>	<li><a href="/editor/submissionHistory/12687">History</a></li>
-	<li><a href="/editor/submissionCitations/<?= $article['article_id']; ?>">References</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/<?= $article['article_id']; ?>">Summary</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submissionReview/<?= $article['article_id']; ?>">Review</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissionEditing/<?= $article['article_id']; ?>">Editing</a></li>	<li><a href="<?= base_url(); ?>/editor/submissionHistory/12687">History</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissionCitations/<?= $article['article_id']; ?>">References</a></li>
 </ul>
 
 <div id="submission">
@@ -32,7 +32,7 @@
 		<td width="20%" class="label">Authors</td>
 		<td width="80%">
 			
-			Cyntia dfdsd Niani <a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2FsubmissionEditing%2F12687&amp;to%5B%5D=%22Cyntia%20dfdsd%20Niani%22%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			Cyntia dfdsd Niani <a href="<?= base_url(); ?>/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2FsubmissionEditing%2F12687&amp;to%5B%5D=%22Cyntia%20dfdsd%20Niani%22%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 	</tr>
 	<tr>
@@ -60,7 +60,7 @@
 
 <table width="100%" class="info">
 	<tr>
-		<td width="28%" colspan="2"><a href="/editor/viewMetadata/12687" class="action">Review Metadata</a></td>
+		<td width="28%" colspan="2"><a href="<?= base_url(); ?>/editor/viewMetadata/12687" class="action">Review Metadata</a></td>
 		<td width="18%" class="heading">Request</td>
 		<td width="18%" class="heading">Underway</td>
 		<td width="18%" class="heading">Complete</td>
@@ -76,7 +76,7 @@
 							N/A
 					</td>
 		<td>
-							<a href="/editor/completeCopyedit?articleId=12687" class="action">Complete</a>
+							<a href="<?= base_url(); ?>/editor/completeCopyedit?articleId=12687" class="action">Complete</a>
 					</td>
 		<td>
 							N/A
@@ -129,7 +129,7 @@
 							N/A
 					</td>
 		<td>
-							<a href="/editor/completeFinalCopyedit?articleId=12687" class="action">Complete</a>
+							<a href="<?= base_url(); ?>/editor/completeFinalCopyedit?articleId=12687" class="action">Complete</a>
 					</td>
 		<td>
 							N/A
@@ -146,7 +146,7 @@
 	</tr>
 </table>
 
-<form method="post" action="/editor/uploadCopyeditVersion"  enctype="multipart/form-data">
+<form method="post" action="<?= base_url(); ?>/editor/uploadCopyeditVersion"  enctype="multipart/form-data">
 	<input type="hidden" name="articleId" value="12687" />
 	Upload file to
 	<input type="radio" name="copyeditStage" id="copyeditStageInitial" value="initial" checked="checked" /><label for="copyeditStageInitial">Step 1</label>,
@@ -169,7 +169,7 @@ Copyedit Comments
 <h3>Scheduling</h3>
 
 <table class="data" width="100%">
-	<form action="/editor/scheduleForPublication/12687" method="post">
+	<form action="<?= base_url(); ?>/editor/scheduleForPublication/12687" method="post">
 		<tr valign="top">
 			<td width="25%" class="label">
 				<label for="issueId">Schedule for publication in</label>
@@ -263,7 +263,7 @@ Copyedit Comments
 	</tr>
 </table>
 
-<form method="post" action="/editor/uploadLayoutFile"  enctype="multipart/form-data">
+<form method="post" action="<?= base_url(); ?>/editor/uploadLayoutFile"  enctype="multipart/form-data">
 	<input type="hidden" name="from" value="submissionEditing" />
 	<input type="hidden" name="articleId" value="12687" />
 	Upload file to <input type="radio" name="layoutFileType" id="layoutFileTypeSubmission" value="submission" checked="checked" /><label for="layoutFileTypeSubmission">Layout Version</label>, <input type="radio" name="layoutFileType" id="layoutFileTypeGalley" value="galley" /><label for="layoutFileTypeGalley">Galley</label>, <input type="radio" name="layoutFileType" id="layoutFileTypeSupp" value="supp" /><label for="layoutFileTypeSupp">Supp. files</label>
@@ -301,7 +301,7 @@ Layout Comments
 		<td width="26%">Author</td>
 				<td>
 			
-							<a href="/editor/notifyAuthorProofreader?articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+							<a href="<?= base_url(); ?>/editor/notifyAuthorProofreader?articleId=12687" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 			
 			
 		</td>
@@ -320,7 +320,7 @@ Layout Comments
 		<td>2.</td>
 		<td>Proofreader</td>
 				<td>
-												<a href="/editor/editorInitiateProofreader?articleId=12687" class="action">Initiate</a>
+												<a href="<?= base_url(); ?>/editor/editorInitiateProofreader?articleId=12687" class="action">Initiate</a>
 										
 		</td>
 		<td>
@@ -337,7 +337,7 @@ Layout Comments
 		<td>3.</td>
 		<td>Layout Editor</td>
 						<td>
-												<a href="/editor/editorInitiateLayoutEditor?articleId=12687" class="action">Initiate</a>
+												<a href="<?= base_url(); ?>/editor/editorInitiateLayoutEditor?articleId=12687" class="action">Initiate</a>
 											
 		</td>
 		<td>

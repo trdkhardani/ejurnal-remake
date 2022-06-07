@@ -3,12 +3,12 @@
 <?= $this->section('content'); ?>
 
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor/submission/<?= $article["article_id"]; ?>" class="hierarchyLink">#<?= $article["article_id"]; ?></a> &gt;
-			<a href="/editor/submission/<?= $article["article_id"]; ?>" class="current">Summary</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/<?= $article["article_id"]; ?>" class="hierarchyLink">#<?= $article["article_id"]; ?></a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/<?= $article["article_id"]; ?>" class="current">Summary</a></div>
 
 <h2>#<?= $article["article_id"]; ?> Summary</h2>
 
@@ -18,9 +18,9 @@
 
 
 <ul class="menu">
-	<li class="current"><a href="/editor/submission/<?= $article["article_id"]; ?>">Summary</a></li>
-	<li><a href="/editor/submissionReview/<?= $article["article_id"]; ?>">Review</a></li>	<li><a href="/editor/submissionEditing/<?= $article["article_id"]; ?>">Editing</a></li>	<li><a href="/editor/submissionHistory/<?= $article["article_id"]; ?>">History</a></li>
-	<li><a href="/editor/submissionCitations/<?= $article["article_id"]; ?>">References</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submission/<?= $article["article_id"]; ?>">Summary</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissionReview/<?= $article["article_id"]; ?>">Review</a></li>	<li><a href="<?= base_url(); ?>/editor/submissionEditing/<?= $article["article_id"]; ?>">Editing</a></li>	<li><a href="<?= base_url(); ?>/editor/submissionHistory/<?= $article["article_id"]; ?>">History</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissionCitations/<?= $article["article_id"]; ?>">References</a></li>
 </ul>
 
 <div id="submission">
@@ -32,7 +32,7 @@
 		<td width="20%" class="label">Authors</td>
 		<td width="80%" colspan="2" class="value">
 			
-			<?= $article["first_name"]; ?> <?= $article["middle_name"]; ?> <?= $article["last_name"]; ?> <a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=%22Cyntia%20dfdsd%20Niani%22%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<?= $article["first_name"]; ?> <?= $article["middle_name"]; ?> <?= $article["last_name"]; ?> <a href="<?= base_url(); ?>/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=%22Cyntia%20dfdsd%20Niani%22%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 	</tr>
 	<tr>
@@ -43,7 +43,7 @@
 		<td class="label">Original file</td>
 		<td colspan="2" class="value">
 				<?php if(isset($original_file)) : ?>
-					<a href="/editor/downloadFile/<?= $original_file["file_id"] ?>" class="file"><?= $original_file["file_name"] ?></a>&nbsp;&nbsp;<?= $original_file["date_uploaded"]; ?>
+					<a href="<?= base_url(); ?>/editor/downloadFile/<?= $original_file["file_id"] ?>" class="file"><?= $original_file["file_name"] ?></a>&nbsp;&nbsp;<?= $original_file["date_uploaded"]; ?>
 				<?php else : ?>
 					None
 				<?php endif; ?>
@@ -54,21 +54,21 @@
 		<td colspan="2" class="value">
 			<?php if(isset($supp_files)) : ?>
 				<?php foreach($supp_files as $supp_file): ?>
-					<a href="/editor/downloadFile/<?= $supp_file["file_id"] ?>" class="file"><?= $supp_file["file_name"] ?></a>&nbsp;&nbsp;<?= $supp_file["date_uploaded"]; ?>
-					<a href="/editor/editSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" class="action">Edit</a>&nbsp;|&nbsp;
-					<a href="/editor/deleteSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a><br>
+					<a href="<?= base_url(); ?>/editor/downloadFile/<?= $supp_file["file_id"] ?>" class="file"><?= $supp_file["file_name"] ?></a>&nbsp;&nbsp;<?= $supp_file["date_uploaded"]; ?>
+					<a href="<?= base_url(); ?>/editor/editSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" class="action">Edit</a>&nbsp;|&nbsp;
+					<a href="<?= base_url(); ?>/editor/deleteSuppFile/<?= $supp_file["article_supplementary_file_id"]; ?>" onclick="return confirm('Are you sure you want to delete this supplementary file?')" class="action">Delete</a><br>
 				<?php endforeach; ?>
 			<?php else : ?>
 				None
 			<?php endif; ?>
-			<a href="/editor/addSuppFile/<?= $article["article_id"]; ?>" class="action">Add a Supplementary File</a>
+			<a href="<?= base_url(); ?>/editor/addSuppFile/<?= $article["article_id"]; ?>" class="action">Add a Supplementary File</a>
 			</td>
 	</tr>
 	<tr>
 		<td class="label">Submitter</td>
 		<td colspan="2" class="value">
 									
-			<?= $article["first_name"]; ?> <?= $article["last_name"]; ?> <a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<?= $article["first_name"]; ?> <?= $article["last_name"]; ?> <a href="<?= base_url(); ?>/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 	</tr>
 	<tr>
@@ -78,7 +78,7 @@
 	<tr>
 		<td class="label">Section</td>
 		<td class="value">Articles</td>
-		<td class="value"><form action="/editor/updateSection/<?= $article["article_id"]; ?>" method="post">Change to <select name="section" size="1" class="selectMenu"><option label="Articles" value="84" selected="selected">Articles</option>
+		<td class="value"><form action="<?= base_url(); ?>/editor/updateSection/<?= $article["article_id"]; ?>" method="post">Change to <select name="section" size="1" class="selectMenu"><option label="Articles" value="84" selected="selected">Articles</option>
 </select> <input type="submit" value="Record" class="button" /></form></td>
 	</tr>
 		<tr valign="top">
@@ -93,7 +93,7 @@
 
 <div id="editors">
 <h3>Editors</h3>
-<form action="/editor/setEditorFlags" method="post">
+<form action="<?= base_url(); ?>/editor/setEditorFlags" method="post">
 <input type="hidden" name="articleId" value="<?= $article["article_id"]; ?>"/>
 <table width="100%" class="listing">
 	<tr class="heading" valign="bottom">
@@ -109,7 +109,7 @@
 		<td>Editor</td>
 		<td>
 			<?= $editor['username']; ?>
-			<a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F12923&amp;to%5B%5D=Baru%20Nanto%20%3Cbarunanto%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=12923" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<a href="<?= base_url(); ?>/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F12923&amp;to%5B%5D=Baru%20Nanto%20%3Cbarunanto%40ppi.its.ac.id%3E&amp;subject=&amp;articleId=12923" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 		<td>
 			&nbsp;&nbsp;
@@ -120,7 +120,7 @@
 			<input type="checkbox" name="canEdit-6923" checked="checked" disabled="disabled"/>
 		</td>
 		<td>2022-06-05</td>
-		<td><a href="/editor/deleteEditAssignment/6923" class="action">Delete</a></td>
+		<td><a href="<?= base_url(); ?>/editor/deleteEditAssignment/6923" class="action">Delete</a></td>
 	</tr>	
 	<?php else : ?>
 	<tr>
@@ -131,11 +131,11 @@
 	<?php endif; ?>
 	</table>
 	<input type="submit" class="button defaultButton" value="Record"/>&nbsp;&nbsp;
-	<a href="/editor/assignEditor/sectionEditor/<?= $article["article_id"]; ?>" class="action">Add Section Editor</a>
-	|&nbsp;<a href="/editor/submissions/assignEditor/<?= $article["article_id"]; ?>" class="action">Add Editor</a>
+	<a href="<?= base_url(); ?>/editor/assignEditor/sectionEditor/<?= $article["article_id"]; ?>" class="action">Add Section Editor</a>
+	|&nbsp;<a href="<?= base_url(); ?>/editor/submissions/assignEditor/<?= $article["article_id"]; ?>" class="action">Add Editor</a>
 	<?php if(isset($editor_assign)): ?>
 	<?php else : ?>
-		|&nbsp;<a href="/editor/submissions/assignEditor/<?= $article["article_id"]; ?>/<?= $editor_id ?>" class="action">Add Self</a></form>
+		|&nbsp;<a href="<?= base_url(); ?>/editor/submissions/assignEditor/<?= $article["article_id"]; ?>/<?= $editor_id ?>" class="action">Add Self</a></form>
 	<?php endif; ?>
 </div>
 
@@ -151,7 +151,7 @@
 			<?= $article['status']; ?>
 		</td>
 		<td width="50%" class="value">
-			<a href="/editor/unsuitableSubmission?articleId=<?= $article["article_id"]; ?>" class="action">Reject and Archive Submission</a>
+			<a href="<?= base_url(); ?>/editor/unsuitableSubmission?articleId=<?= $article["article_id"]; ?>" class="action">Reject and Archive Submission</a>
 		</td>
 	</tr>
 	<tr>
@@ -176,7 +176,7 @@
 <div id="metadata">
 <h3>Submission Metadata</h3>
 
-	<p><a href="/editor/viewMetadata/<?= $article["article_id"]; ?>" class="action">Edit Metadata</a></p>
+	<p><a href="<?= base_url(); ?>/editor/viewMetadata/<?= $article["article_id"]; ?>" class="action">Edit Metadata</a></p>
 	
 
 <div id="authors">
@@ -193,7 +193,7 @@
 			<?php elseif (isset($article['first_name']) && $article['middle_name'] && $article['last_name']) : ?>
 				<?= $article['first_name'] . " " . $article['first_name'] . " " . $article['last_name']; ?>
 			<?php endif; ?>
-			<a href="/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20dfdsd%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
+			<a href="<?= base_url(); ?>/user/email?redirectUrl=http%3A%2F%2Fiptek.its.ac.id%2Findex.php%2Fitj%2Feditor%2Fsubmission%2F<?= $article["article_id"]; ?>&amp;to%5B%5D=Cyntia%20dfdsd%20Niani%20%3Ccyntian%40ppi.its.ac.id%3E&amp;subject=xczxzcxcz&amp;articleId=<?= $article["article_id"]; ?>" class="icon"><img src="https://iptek.its.ac.id/lib/pkp/templates/images/icons/mail.gif" width="16" height="14" alt="Mail" /></a>
 		</td>
 	</tr>
 		<tr valign="top">

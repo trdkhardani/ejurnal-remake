@@ -2,11 +2,11 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor" class="current">Archives</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="current">Archives</a></div>
 
 <h2>Archives</h2>
 
@@ -16,10 +16,10 @@
 
 
 <ul class="menu">
-	<li><a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-	<li><a href="/editor/submissions/submissionsInReview">In Review</a></li>
-	<li><a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
-	<li class="current"><a href="/editor/submissions/submissionsArchives">Archives</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInReview">In Review</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing">In Editing</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submissions/submissionsArchives">Archives</a></li>
 </ul>
 
 <form action="#">
@@ -48,7 +48,7 @@ function sortSearch(heading, direction) {
 
 </script>
 
-<form method="post" id="submit" action="/editor/submissions/submissionsArchives">
+<form method="post" id="submit" action="<?= base_url(); ?>/editor/submissions/submissionsArchives">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -227,7 +227,7 @@ function sortSearch(heading, direction) {
 		<td>2022-03-10</td>
 		<td>ART</td>
 		<td>Niani, Siahaan</td>
-		<td><a href="/editor/submissionEditing/12515" class="action">Flexural And Shear Behaviour Of Reinforced Concrete Slab...</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionEditing/12515" class="action">Flexural And Shear Behaviour Of Reinforced Concrete Slab...</a></td>
 		<td align="right">
 										Vol 1, No 1 (2022)	
 					</td>
@@ -241,7 +241,7 @@ function sortSearch(heading, direction) {
 		<td>2022-05-10</td>
 		<td>ART</td>
 		<td>Last</td>
-		<td><a href="/editor/submissionEditing/12892" class="action">Pemberitahuan</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionEditing/12892" class="action">Pemberitahuan</a></td>
 		<td align="right">
 										Vol 1, No 2 (2022)	
 					</td>
@@ -255,7 +255,7 @@ function sortSearch(heading, direction) {
 		<td>2022-06-02</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionEditing/13087" class="action">as</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionEditing/13087" class="action">as</a></td>
 		<td align="right">
 										Vol 1, No 2 (2022)	
 					</td>
@@ -269,9 +269,9 @@ function sortSearch(heading, direction) {
 		<td>2022-06-02</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionEditing/13098" class="action">feed</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionEditing/13098" class="action">feed</a></td>
 		<td align="right">
-										Archived&nbsp;&nbsp;<a href="/editor/deleteSubmission/13098" onclick="return confirm('Are you sure you want to permanently delete this submission?')" class="action">Delete</a>
+										Archived&nbsp;&nbsp;<a href="<?= base_url(); ?>/editor/deleteSubmission/13098" onclick="return confirm('Are you sure you want to permanently delete this submission?')" class="action">Delete</a>
 					</td>
 	</tr>
 	<tr>

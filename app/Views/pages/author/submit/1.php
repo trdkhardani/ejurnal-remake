@@ -3,11 +3,11 @@
 <?= $this->section('content'); ?>
 
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-	<a href="/user" class="hierarchyLink">User</a> &gt;
-	<a href="/author" class="hierarchyLink">Author</a> &gt;
-	<a href="/author" class="hierarchyLink">Submissions</a> &gt;
-	<a href="/author/submit/1" class="current">New Submission</a>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+	<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+	<a href="<?= base_url(); ?>/author" class="hierarchyLink">Author</a> &gt;
+	<a href="<?= base_url(); ?>/author" class="hierarchyLink">Submissions</a> &gt;
+	<a href="<?= base_url(); ?>/author/submit/1" class="current">New Submission</a>
 </div>
 <h2>Step 1. Starting the Submission</h2>
 
@@ -80,7 +80,7 @@ function checkSubmissionChecklist() {
 		</tr>
 						<tr valign="top">
 			<td width="5%"><input type="checkbox" id="checklist-5" name="checklist[]" value="4" <?= isset($checked) ? $checked : '' ?>/></td>
-			<td width="95%"><label for="checklist-5">The text adheres to the stylistic and bibliographic requirements outlined in the <a href="/index.php/itj/about/submissions#authorGuidelines" target="_new">Author Guidelines</a>, which is found in About the Journal.</label></td>
+			<td width="95%"><label for="checklist-5">The text adheres to the stylistic and bibliographic requirements outlined in the <a href="<?= base_url(); ?>/index.php/itj/about/submissions#authorGuidelines" target="_new">Author Guidelines</a>, which is found in About the Journal.</label></td>
 		</tr>
 						<tr valign="top">
 			<td width="5%"><input type="checkbox" id="checklist-6" name="checklist[]" value="5" <?= isset($checked) ? $checked : '' ?>/></td>

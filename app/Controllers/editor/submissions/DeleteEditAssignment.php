@@ -13,6 +13,6 @@ class DeleteEditAssignment extends BaseController
         'article_id' => $article_id,
         'status' => "Waiting Assignment"
       ]);
-      return redirect()->to('/editor/submissions/'.$article_id);
+      return redirect()->to(base_url() . '/editor/submissions/'.$article_id);
     }
 }

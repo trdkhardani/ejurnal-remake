@@ -16,7 +16,7 @@ class Submit extends BaseController
         
         // Redirect ketika tidak ditemukan article_id di Database
         if($articleID > 0 && $this->articlesModel->where('article_id', $articleID)->first() == NULL) {
-          return redirect()->to('/author/submit/1');
+          return redirect()->to(base_url() . '/author/submit/1');
         }
         
         $data['article'] = [
@@ -102,7 +102,7 @@ class Submit extends BaseController
 
     // Redirect apabila tidak ditemukan article_id pada database
     if($page != 1 && $this->articlesModel->where('article_id', $articleID)->first() == NULL) {
-      return redirect()->to('/author/submit/1');
+      return redirect()->to(base_url() . '/author/submit/1');
     }
 
     return view("pages/author/submit/$page", $data);

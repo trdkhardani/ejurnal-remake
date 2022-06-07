@@ -28,7 +28,7 @@ class recordDecision extends BaseController
                     'assignment_id' => $assignment_id['assignment_id'],
                     'edit_assignment_id' => $editAssignment,
                 ]);
-                return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+                return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
                 // break;
             
             case 2:
@@ -38,7 +38,7 @@ class recordDecision extends BaseController
                     'decision' => "Revisions Required",
                     'date_recorded' => date('Y-m-d')
                 ]);
-                return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+                return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
                 // break;
 
             case 3:
@@ -48,7 +48,7 @@ class recordDecision extends BaseController
                     'decision' => "Resubmit for Review",
                     'date_recorded' => date('Y-m-d')
                 ]);
-                return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+                return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
                 // break;
 
             case 4:
@@ -58,11 +58,11 @@ class recordDecision extends BaseController
                     'decision' => "Decline Submission",
                     'date_recorded' => date('Y-m-d')
                 ]);
-                return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+                return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
                 // break;
             
             default:
-                return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+                return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
                 // break;
         }
     }

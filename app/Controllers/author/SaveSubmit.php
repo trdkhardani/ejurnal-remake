@@ -26,7 +26,7 @@ class SaveSubmit extends BaseController
           $articleID = $articleID;
         }
         
-        return redirect()->to('/author/submit/2/'.$articleID); 
+        return redirect()->to(base_url() . '/author/submit/2/'.$articleID); 
         break;
 
       case 2:
@@ -39,7 +39,7 @@ class SaveSubmit extends BaseController
         ];
 
         if(!$this->validate($validationRule)) {
-          return redirect()->to('/author/submit/2/'.$articleID.'?error=pdf+only');
+          return redirect()->to(base_url() . '/author/submit/2/'.$articleID.'?error=pdf+only');
         }
 
         $file = $this->request->getFile('submissionFile');
@@ -77,7 +77,7 @@ class SaveSubmit extends BaseController
           $data['article']['progress'] = $page;
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to('/author/submit/2/'.$articleID);
+          return redirect()->to(base_url() . '/author/submit/2/'.$articleID);
         }
         break;
       case 3:
@@ -124,7 +124,7 @@ class SaveSubmit extends BaseController
           
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to('/author/submit/4/'.$articleID);
+          return redirect()->to(base_url() . '/author/submit/4/'.$articleID);
         } 
         break;
 
@@ -138,7 +138,7 @@ class SaveSubmit extends BaseController
         ];
 
         if(!$this->validate($validationRule)) {
-          return redirect()->to('/author/submit/4/'.$articleID.'?error=pdf+only');
+          return redirect()->to(base_url() . '/author/submit/4/'.$articleID.'?error=pdf+only');
         }
 
         $file = $this->request->getFile('uploadSuppFile');
@@ -173,7 +173,7 @@ class SaveSubmit extends BaseController
           $data['article']['progress'] = $page;
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to('/author/submit/4/'.$articleID);
+          return redirect()->to(base_url() . '/author/submit/4/'.$articleID);
         }
         break;
         
@@ -184,12 +184,12 @@ class SaveSubmit extends BaseController
         $data['article']['date_submit'] = date("Y-m-d H:i:s");
         $this->articlesModel->update($articleID, $data['article']);
         
-        return redirect()->to('/author/');
+        return redirect()->to(base_url() . '/author/');
         break;
     }
 
     if($page != 1 && $this->articlesModel->where('article_id', $articleID)->first() == NULL) {
-      return redirect()->to('/author/submit/1');
+      return redirect()->to(base_url() . '/author/submit/1');
     }
   }
 }

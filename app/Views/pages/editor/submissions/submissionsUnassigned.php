@@ -3,11 +3,11 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor" class="current">Unassigned</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="current">Unassigned</a></div>
 
 <h2>Unassigned</h2>
 
@@ -17,10 +17,10 @@
 
 
 <ul class="menu">
-	<li class="current"><a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-	<li><a href="/editor/submissions/submissionsInReview">In Review</a></li>
-	<li><a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
-	<li><a href="/editor/submissions/submissionsArchives">Archives</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInReview">In Review</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing">In Editing</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsArchives">Archives</a></li>
 </ul>
 
 <form action="#">
@@ -49,7 +49,7 @@ function sortSearch(heading, direction) {
 
 </script>
 
-<form method="post" id="submit" action="/editor/submissions/submissionsUnassigned">
+<form method="post" id="submit" action="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -224,7 +224,7 @@ function sortSearch(heading, direction) {
 			<td></td>
 			<td><?= $a['first_name']; ?></td>
 			<td>
-				<a href="/editor/submissions/<?= $a['article_id']; ?>"><?= $a['title']; ?></a>
+				<a href="<?= base_url(); ?>/editor/submissions/<?= $a['article_id']; ?>"><?= $a['title']; ?></a>
 			</td>
 		</tr>
 	<?php endforeach; ?>

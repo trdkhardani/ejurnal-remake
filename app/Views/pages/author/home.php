@@ -50,8 +50,8 @@
 			<td><?= $article['date_created']; ?></td>
 			<td>ART</td>
 			<td><?= $article['last_name'] ?></td>
-						<td><a href="/author/submit/<?= $article['progress'] . '/' . $article['article_id']; ?>" class="action"><?= $article['title'] ?></a></td>
-				<td align="right"><?= $article['status'] ?><br /><a href="/author/deleteSubmission/12539" class="action" onclick="confirm('Are you sure you want to delete this incomplete submission?')">Delete</a></td>
+						<td><a href="<?= base_url(); ?>/author/submit/<?= $article['progress'] . '/' . $article['article_id']; ?>" class="action"><?= $article['title'] ?></a></td>
+				<td align="right"><?= $article['status'] ?><br /><a href="<?= base_url(); ?>/author/deleteSubmission/12539" class="action" onclick="confirm('Are you sure you want to delete this incomplete submission?')">Delete</a></td>
 			
 		</tr>
 		<?php endforeach; ?>

@@ -14,7 +14,7 @@ class ReviewAssignmentsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['review_assignment_id', 'article_id', 'response', 'recommendation', 'reviewer_id', 'date_submit'];
+    protected $allowedFields    = ['review_assignment_id', 'article_id', 'assignment_id', 'response', 'recommendation', 'reviewer_id', 'date_submit'];
 
     // Dates
     protected $useTimestamps = false;

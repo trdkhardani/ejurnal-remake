@@ -7,31 +7,6 @@ use App\Models\UsersModel;
 class User extends BaseController
 {
     ////////////////////////////////////
-    //// Untuk tampilan login
-    ////////////////////////////////////
-    public function index()
-    {
-        helper(['form']);
-        $data = [
-            'title' => 'Home'
-        ];
-        echo view('template/navbar', $data);
-        echo view('home/login');
-        echo view('template/footer');
-    }
-
-    public function about()
-    {
-        helper(['form']);
-        $data = [
-            'title' => 'About'
-        ];
-        echo view('webLama/header', $data);
-        echo view('webLama/about', $data);
-        echo view('webLama/sidebar', $data);
-    }
-
-    ////////////////////////////////////
     //// Untuk validasi login user
     ////////////////////////////////////
     public function login()
@@ -176,7 +151,7 @@ class User extends BaseController
         ]);
 
         // rediirect ke view login
-        return redirect()->to('Examples/login');
+        return redirect()->to(base_url('/'));
         // echo "berhasil";
     }
 }

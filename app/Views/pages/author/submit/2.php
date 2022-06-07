@@ -2,22 +2,22 @@
 
 <?= $this->section('content'); ?>
             <div id="breadcrumb">
-               <a href="/index">Home</a> &gt;
-               <a href="/user" class="hierarchyLink">User</a> &gt;
-               <a href="/author" class="hierarchyLink">Author</a> &gt;
-               <a href="/author" class="hierarchyLink">Submissions</a> &gt;
-               <a href="/author/submit/2?articleId=12525" class="current">New Submission</a>
+               <a href="<?= base_url(); ?>/index">Home</a> &gt;
+               <a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Author</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Submissions</a> &gt;
+               <a href="<?= base_url(); ?>/author/submit/2?articleId=12525" class="current">New Submission</a>
             </div>
             <h2>Step 2. Uploading the Submission</h2>
             <div id="content">
                <ul class="steplist">
-                  <li id="step1" ><a href="/author/submit/1<?= '/' . $article['article_id']; ?>">1. Start</a></li>
+                  <li id="step1" ><a href="<?= base_url(); ?>/author/submit/1<?= '/' . $article['article_id']; ?>">1. Start</a></li>
                   <li id="step2"  class="current">2. Upload Submission</li>
                   <li id="step3" >3. Enter Metadata</li>
                   <li id="step4" >4. Upload Supplementary Files</li>
                   <li id="step5" >5. Confirmation</li>
                </ul>
-               <form method="post" action="/author/saveSubmit/2<?= '/' . $article['article_id']; ?>" enctype="multipart/form-data">
+               <form method="post" action="<?= base_url(); ?>/author/saveSubmit/2<?= '/' . $article['article_id']; ?>" enctype="multipart/form-data">
                   <input type="hidden" name="articleId" value="12536" />
                   <div id="uploadInstructions">
                      <p>To upload a manuscript to this journal, complete the following steps.</p>

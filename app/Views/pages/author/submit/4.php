@@ -2,22 +2,22 @@
 
 <?= $this->section('content'); ?>
             <div id="breadcrumb">
-               <a href="/index">Home</a> &gt;
-               <a href="/user" class="hierarchyLink">User</a> &gt;
-               <a href="/author" class="hierarchyLink">Author</a> &gt;
-               <a href="/author" class="hierarchyLink">Submissions</a> &gt;
-               <a href="/author/submit/4?articleId=12525" class="current">New Submission</a>
+               <a href="<?= base_url(); ?>/index">Home</a> &gt;
+               <a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Author</a> &gt;
+               <a href="<?= base_url(); ?>/author" class="hierarchyLink">Submissions</a> &gt;
+               <a href="<?= base_url(); ?>/author/submit/4?articleId=12525" class="current">New Submission</a>
             </div>
             <h2>Step 4. Uploading Supplementary Files</h2>
             <div id="content">
                <ul class="steplist">
-                  <li id="step1" ><a href="/author/submit/1?articleId=12536">1. Start</a></li>
-                  <li id="step2" ><a href="/author/submit/2?articleId=12536">2. Upload Submission</a></li>
-                  <li id="step3" ><a href="/author/submit/3?articleId=12536">3. Enter Metadata</a></li>
+                  <li id="step1" ><a href="<?= base_url(); ?>/author/submit/1?articleId=12536">1. Start</a></li>
+                  <li id="step2" ><a href="<?= base_url(); ?>/author/submit/2?articleId=12536">2. Upload Submission</a></li>
+                  <li id="step3" ><a href="<?= base_url(); ?>/author/submit/3?articleId=12536">3. Enter Metadata</a></li>
                   <li id="step4"  class="current">4. Upload Supplementary Files</li>
                   <li id="step5" >5. Confirmation</li>
                </ul>
-               <form id="submitForm" method="post" action="/author/saveSubmit/4/<?= $article['article_id']; ?>" enctype="multipart/form-data">
+               <form id="submitForm" method="post" action="<?= base_url(); ?>/author/saveSubmit/4/<?= $article['article_id']; ?>" enctype="multipart/form-data">
                   <input type="hidden" name="articleId" value="12536" />
                   <p>This optional step allows Supplementary Files to be added to a submission. The files, which can be in any format, might include (a) research instruments, (b) data sets, which comply with the terms of the study's research ethics review, (c) sources that otherwise would be unavailable to readers, (d) figures and tables that cannot be integrated into the text itself, or other materials that add to the contribution of the work.</p>
                   <table class="listing" width="100%">

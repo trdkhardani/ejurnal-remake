@@ -3,9 +3,9 @@
 
 <?= $this->section('content'); ?>
               <div id="breadcrumb">
-                <a href="/index">Home</a> &gt;
-                <a href="/user" class="hierarchyLink">User</a> &gt;
-                <a href="/editor" class="current">Editor</a>
+                <a href="<?= base_url(); ?>/index">Home</a> &gt;
+                <a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+                <a href="<?= base_url(); ?>/editor" class="current">Editor</a>
               </div>
               
               <h2>Editor Home</h2>
@@ -15,10 +15,10 @@
                   <h3>Submissions</h3>
 
                   <ul class="plain">
-                    <li>&#187; <a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-                    <li>&#187; <a href="/editor/submissions/submissionsInReview">In Review</a></li>
-                    <li>&#187; <a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
-                    <li>&#187; <a href="/editor/submissions/submissionsArchives">Archives</a></li>
+                    <li>&#187; <a href="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+                    <li>&#187; <a href="<?= base_url(); ?>/editor/submissions/submissionsInReview">In Review</a></li>
+                    <li>&#187; <a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing">In Editing</a></li>
+                    <li>&#187; <a href="<?= base_url(); ?>/editor/submissions/submissionsArchives">Archives</a></li>
                   </ul>
               </div>
               
@@ -36,7 +36,7 @@
                 // -->
               </script>
 
-              <form method="post" id="submit" action="/editor/index/search">
+              <form method="post" id="submit" action="<?= base_url(); ?>/editor/index/search">
                   <input type="hidden" name="sort" value="id"/>
                   <input type="hidden" name="sortDirection" value="ASC"/>
                   <select name="searchField" size="1" class="selectMenu">
@@ -199,10 +199,10 @@
               <h3>Issues</h3>
 
               <ul class="plain">
-                <li>&#187; <a href="/editor/createIssue">Create Issue</a></li>
-                <li>&#187; <a href="/editor/notifyUsers">Notify Users</a></li>
-                <li>&#187; <a href="/editor/futureIssues">Future Issues</a></li>
-                <li>&#187; <a href="/editor/backIssues">Back Issues</a></li>
+                <li>&#187; <a href="<?= base_url(); ?>/editor/createIssue">Create Issue</a></li>
+                <li>&#187; <a href="<?= base_url(); ?>/editor/notifyUsers">Notify Users</a></li>
+                <li>&#187; <a href="<?= base_url(); ?>/editor/futureIssues">Future Issues</a></li>
+                <li>&#187; <a href="<?= base_url(); ?>/editor/backIssues">Back Issues</a></li>
                 
               </ul>
               </div>

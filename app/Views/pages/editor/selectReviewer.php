@@ -3,13 +3,13 @@
 <?= $this->section('content'); ?>
 
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor/submission/12541" class="hierarchyLink">#12541</a> &gt;
-			<a href="/editor/submissionReview/12541" class="hierarchyLink">Review</a> &gt;
-			<a href="/editor/selectReviewer/12541" class="current">Reviewers</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/12541" class="hierarchyLink">#12541</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissionReview/12541" class="hierarchyLink">Review</a> &gt;
+			<a href="<?= base_url(); ?>/editor/selectReviewer/12541" class="current">Reviewers</a></div>
 
 <h2>Reviewers</h2>
 
@@ -19,7 +19,7 @@
 
 <div id="selectReviewer">
 <h3>Select Reviewer</h3>
-<form id="submit" method="post" action="/editor/selectReviewer/12541">
+<form id="submit" method="post" action="<?= base_url(); ?>/editor/selectReviewer/12541">
 	<input type="hidden" name="sort" value="name"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -38,9 +38,9 @@
 	<input type="text" size="10" name="search" class="textField" value="" />&nbsp;<input type="submit" value="Search" class="button" />
 </form>
 
-<p><a href="/editor/selectReviewer/12541?searchInitial=A">A</a> <a href="/editor/selectReviewer/12541?searchInitial=B">B</a> <a href="/editor/selectReviewer/12541?searchInitial=C">C</a> <a href="/editor/selectReviewer/12541?searchInitial=D">D</a> <a href="/editor/selectReviewer/12541?searchInitial=E">E</a> <a href="/editor/selectReviewer/12541?searchInitial=F">F</a> <a href="/editor/selectReviewer/12541?searchInitial=G">G</a> <a href="/editor/selectReviewer/12541?searchInitial=H">H</a> <a href="/editor/selectReviewer/12541?searchInitial=I">I</a> <a href="/editor/selectReviewer/12541?searchInitial=J">J</a> <a href="/editor/selectReviewer/12541?searchInitial=K">K</a> <a href="/editor/selectReviewer/12541?searchInitial=L">L</a> <a href="/editor/selectReviewer/12541?searchInitial=M">M</a> <a href="/editor/selectReviewer/12541?searchInitial=N">N</a> <a href="/editor/selectReviewer/12541?searchInitial=O">O</a> <a href="/editor/selectReviewer/12541?searchInitial=P">P</a> <a href="/editor/selectReviewer/12541?searchInitial=Q">Q</a> <a href="/editor/selectReviewer/12541?searchInitial=R">R</a> <a href="/editor/selectReviewer/12541?searchInitial=S">S</a> <a href="/editor/selectReviewer/12541?searchInitial=T">T</a> <a href="/editor/selectReviewer/12541?searchInitial=U">U</a> <a href="/editor/selectReviewer/12541?searchInitial=V">V</a> <a href="/editor/selectReviewer/12541?searchInitial=W">W</a> <a href="/editor/selectReviewer/12541?searchInitial=X">X</a> <a href="/editor/selectReviewer/12541?searchInitial=Y">Y</a> <a href="/editor/selectReviewer/12541?searchInitial=Z">Z</a> <a href="/editor/selectReviewer/12541"><strong>All</strong></a></p>
+<p><a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=A">A</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=B">B</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=C">C</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=D">D</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=E">E</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=F">F</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=G">G</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=H">H</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=I">I</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=J">J</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=K">K</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=L">L</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=M">M</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=N">N</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=O">O</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=P">P</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=Q">Q</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=R">R</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=S">S</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=T">T</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=U">U</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=V">V</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=W">W</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=X">X</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=Y">Y</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541?searchInitial=Z">Z</a> <a href="<?= base_url(); ?>/editor/selectReviewer/12541"><strong>All</strong></a></p>
 
-<p><a class="action" href="/editor/enrollSearch/12541">Enroll an Existing User As Reviewer</a>&nbsp;|&nbsp;<a class="action" href="/editor/createReviewer/12541">Create New Reviewer</a></p>
+<p><a class="action" href="<?= base_url(); ?>/editor/enrollSearch/12541">Enroll an Existing User As Reviewer</a>&nbsp;|&nbsp;<a class="action" href="<?= base_url(); ?>/editor/createReviewer/12541">Create New Reviewer</a></p>
 
 <div id="reviewers">
 <table class="listing" width="100%">

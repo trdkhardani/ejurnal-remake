@@ -2,13 +2,13 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor/submission/12541" class="hierarchyLink">#12541</a> &gt;
-			<a href="/editor/submission/12541" class="hierarchyLink">Summary</a> &gt;
-			<a href="/editor/viewMetadata/12541" class="current">Edit Metadata</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/12541" class="hierarchyLink">#12541</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submission/12541" class="hierarchyLink">Summary</a> &gt;
+			<a href="<?= base_url(); ?>/editor/viewMetadata/12541" class="current">Edit Metadata</a></div>
 
 <h2>Edit Metadata</h2>
 
@@ -19,7 +19,7 @@
 
 
 
-<form id="metadata" method="post" action="/editor/saveMetadata" enctype="multipart/form-data">
+<form id="metadata" method="post" action="<?= base_url(); ?>/editor/saveMetadata" enctype="multipart/form-data">
 <input type="hidden" name="article_id" value="<?= $article['article_id']?>" />
 <input type="hidden" name="author_id" value="<?= $article['author_id']?>" />
 

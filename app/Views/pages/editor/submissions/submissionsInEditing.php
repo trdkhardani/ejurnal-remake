@@ -3,11 +3,11 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor" class="current">Submissions in Editing</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="current">Submissions in Editing</a></div>
 
 <h2>Submissions in Editing</h2>
 
@@ -17,10 +17,10 @@
 
 
 <ul class="menu">
-	<li><a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-	<li><a href="/editor/submissions/submissionsInReview">In Review</a></li>
-	<li class="current"><a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
-	<li><a href="/editor/submissions/submissionsArchives">Archives</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInReview">In Review</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing">In Editing</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsArchives">Archives</a></li>
 </ul>
 
 <form action="#">
@@ -49,7 +49,7 @@ function sortSearch(heading, direction) {
 
 </script>
 
-<form method="post" id="submit" action="/editor/submissions/submissionsInEditing">
+<form method="post" id="submit" action="<?= base_url(); ?>/editor/submissions/submissionsInEditing">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -212,7 +212,7 @@ function sortSearch(heading, direction) {
 	</tr>
 	<tr class="heading" valign="bottom">
 		<td width="5%"><a href="javascript:sortSearch('id','1')" style="font-weight:bold">ID</a></td>
-		<td width="5%"><span class="disabled">MM-DD</span><br /><a href="/editor/submissions/submissionsInEditing?sort=submitDate&amp;sortDirection=1">Submit</a></td>
+		<td width="5%"><span class="disabled">MM-DD</span><br /><a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing?sort=submitDate&amp;sortDirection=1">Submit</a></td>
 		<td width="5%"><a href="javascript:sortSearch('section','1')">Sec</a></td>
 		<td width="15%"><a href="javascript:sortSearch('authors','1')">Authors</a></td>
 		<td width="25%"><a href="javascript:sortSearch('title','1')">Title</a></td>

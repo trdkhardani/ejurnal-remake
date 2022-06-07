@@ -3,11 +3,11 @@
 
 <?= $this->section('content'); ?>
 <div id="breadcrumb">
-	<a href="/index">Home</a> &gt;
-			<a href="/user" class="hierarchyLink">User</a> &gt;
-			<a href="/editor" class="hierarchyLink">Editor</a> &gt;
-			<a href="/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
-			<a href="/editor" class="current">Submissions in Review</a></div>
+	<a href="<?= base_url(); ?>/index">Home</a> &gt;
+			<a href="<?= base_url(); ?>/user" class="hierarchyLink">User</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="hierarchyLink">Editor</a> &gt;
+			<a href="<?= base_url(); ?>/editor/submissions" class="hierarchyLink">Submissions</a> &gt;
+			<a href="<?= base_url(); ?>/editor" class="current">Submissions in Review</a></div>
 
 <h2>Submissions in Review</h2>
 
@@ -17,10 +17,10 @@
 
 
 <ul class="menu">
-	<li><a href="/editor/submissions/submissionsUnassigned">Unassigned</a></li>
-	<li class="current"><a href="/editor/submissions/submissionsInReview">In Review</a></li>
-	<li><a href="/editor/submissions/submissionsInEditing">In Editing</a></li>
-	<li><a href="/editor/submissions/submissionsArchives">Archives</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsUnassigned">Unassigned</a></li>
+	<li class="current"><a href="<?= base_url(); ?>/editor/submissions/submissionsInReview">In Review</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsInEditing">In Editing</a></li>
+	<li><a href="<?= base_url(); ?>/editor/submissions/submissionsArchives">Archives</a></li>
 </ul>
 
 <form action="#">
@@ -49,7 +49,7 @@ function sortSearch(heading, direction) {
 
 </script>
 
-<form method="post" id="submit" action="/editor/submissions/submissionsInReview">
+<form method="post" id="submit" action="<?= base_url(); ?>/editor/submissions/submissionsInReview">
 	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
@@ -238,7 +238,7 @@ function sortSearch(heading, direction) {
 		<td>04-05</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionReview/12517" class="action">tesdt</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionReview/12517" class="action">tesdt</a></td>
 		<td>
 			<table width="100%">
 																	<tr valign="top">
@@ -262,7 +262,7 @@ function sortSearch(heading, direction) {
 		<td>04-05</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionReview/12682" class="action">test</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionReview/12682" class="action">test</a></td>
 		<td>
 			<table width="100%">
 											<tr valign="top">
@@ -286,7 +286,7 @@ function sortSearch(heading, direction) {
 		<td>04-07</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionReview/12718" class="action">adasdadaasdd</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionReview/12718" class="action">adasdadaasdd</a></td>
 		<td>
 			<table width="100%">
 																	<tr valign="top">
@@ -310,7 +310,7 @@ function sortSearch(heading, direction) {
 		<td>05-12</td>
 		<td>ART</td>
 		<td>ahmad</td>
-		<td><a href="/editor/submissionReview/12748" class="action">halo</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionReview/12748" class="action">halo</a></td>
 		<td>
 			<table width="100%">
 																	<tr valign="top">
@@ -334,7 +334,7 @@ function sortSearch(heading, direction) {
 		<td>05-24</td>
 		<td>ART</td>
 		<td>Niani</td>
-		<td><a href="/editor/submissionReview/13027" class="action">Submission 13027</a></td>
+		<td><a href="<?= base_url(); ?>/editor/submissionReview/13027" class="action">Submission 13027</a></td>
 		<td>
 			<table width="100%">
 											<tr valign="top">

@@ -13,6 +13,6 @@ class emailEditorDecisionComment extends BaseController
             'edit_assignment_id' => $edit_assignment_id['edit_assignment_id'],
             'notified' => 1
         ]);
-        return redirect()->to(base_url('/editor/submissionReview/'.$article_id));
+        return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
     }
 }
