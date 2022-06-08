@@ -47,24 +47,24 @@ $username = "azril";
                </div>
 
                <!-- SidebarUser berganti ketika user sudah login -->
-               <form action="<?= base_url(); ?>/User/login" method="post">
-                  <?= csrf_field(); ?>
 
-                  <?php if (!empty(session()->get('username'))) : ?>
-                     <p>You are logged in as... <strong><?= session()->get('username'); ?></strong></p>
+               <?php if (!empty(session()->get('username'))) : ?>
+                  <p>You are logged in as... <strong><?= session()->get('username'); ?></strong></p>
 
-                     <ul class="list_style_side">
-                        <li>
-                           <a href="#">My Journals</a>
-                        </li>
-                        <li>
-                           <a href="#">My Profile</a>
-                        </li>
-                        <li>
-                           <a href="<?= base_url(); ?>/User/logout">Log Out</a>
-                        </li>
-                     </ul>
-                  <?php else : ?>
+                  <ul class="list_style_side">
+                     <li>
+                        <a href="#">My Journals</a>
+                     </li>
+                     <li>
+                        <a href="#">My Profile</a>
+                     </li>
+                     <li>
+                        <a href="<?= base_url(); ?>/User/logout">Log Out</a>
+                     </li>
+                  </ul>
+               <?php else : ?>
+                  <form action="<?= base_url(); ?>/User/login" method="post">
+                     <?= csrf_field(); ?>
                      <table width="100%">
                         <tr>
                            <td width="17%"><label for="username" class="label">Username</label></td>
@@ -75,11 +75,13 @@ $username = "azril";
                            <td><input type="password" class="search_box" name="password" id="password"></td>
                         </tr>
                      </table>
+                     <a href="<?= base_url(); ?>/Register">Create a New Account</a>
+                     <br>
                      <input type="checkbox" id="remember" name="remember" value="Remember me"> Remember me <br>
                      <button type="submit">Login</button>
                   <?php endif; ?>
-               </form>
-               <!-- <div class="block" id="notification">
+                  </form>
+                  <!-- <div class="block" id="notification">
                      <span class="blockTitle">Notifications</span>
                      <ul>
                         <li><a href="<?= base_url(); ?>/notification">View</a></li>

@@ -14,50 +14,48 @@ class User extends BaseController
         helper(['form']);
         $data = [];
         // validasi login user
-        if ($this->request->getMethod() == 'post')
-        {
-                // mengambil data dr database
-                $model = new UsersModel();
+        if ($this->request->getMethod() == 'post') {
+            // mengambil data dr database
+            $model = new UsersModel();
 
-                // mendapatkan inputan user
-                $username = $this->request->getVar('username');
-                $password = $this->request->getVar('password');
+            // mendapatkan inputan user
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
 
-                // mencocokkan inputan user dengan data di database
-                $user = $model->where('username', $username)->first();
+            // mencocokkan inputan user dengan data di database
+            $user = $model->where('username', $username)->first();
 
-                // mengambil data user
-                
-                if ($user) {
-                    if (password_verify($password, $user['password'])) {
-                        $this->setUserSession($user);
-                        
-                        // return redirect()->to(base_url('home'));
-                        if($user['role'] == "author"){
-                            return redirect()->to(base_url('author'));
+            // mengambil data user
+
+            if ($user) {
+                if (password_verify($password, $user['password'])) {
+                    $this->setUserSession($user);
+
+                    // return redirect()->to(base_url('home'));
+                    if ($user['role'] == "author") {
+                        return redirect()->to(base_url('author'));
 
                         // jika role = editor
-                        } else if ($user['role'] == "editor"){
-                            return redirect()->to(base_url('editor'));
+                    } else if ($user['role'] == "editor") {
+                        return redirect()->to(base_url('editor'));
 
                         // jika role = reviewer
-                        } else if ($user['role'] == "reviewer"){
-                            return redirect()->to(base_url('reviewer'));
-                        }
-                    } else {
-                        if(!password_verify($password, $user['password']))
-                        {
-                            session()->setFlashdata('error', 'Password salah');
-                            return redirect()->back()->withInput();
-                        } else{
-                            session()->setFlashdata('error', 'Username & Password Salah');
-                            return redirect()->back();
-                        }
+                    } else if ($user['role'] == "reviewer") {
+                        return redirect()->to(base_url('reviewer'));
                     }
                 } else {
-                    session()->setFlashdata('error', 'Username & Password Salah');
-                    return redirect()->back();
+                    if (!password_verify($password, $user['password'])) {
+                        session()->setFlashdata('error', 'Password salah');
+                        return redirect()->back()->withInput();
+                    } else {
+                        session()->setFlashdata('error', 'Username & Password Salah');
+                        return redirect()->back();
+                    }
                 }
+            } else {
+                session()->setFlashdata('error', 'Username & Password Salah');
+                return redirect()->back();
+            }
         }
     }
 
@@ -141,17 +139,17 @@ class User extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $users = new UsersModel();
-
-        $users->insert([
+        // $users = new UsersModel()
+        $this->usersModel->insert([
             'username' => $this->request->getVar('username'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
-            'role' => $this->request->getVar('role'),
-            'email' => $this->request->getVar('email')
+            'role' => $this->request->getPost('role'),
+            'email' => $this->request->getVar('email'),
+            'first_name' => $this->request->getVar('first_name'),
+            'last_name' => $this->request->getVar('last_name'),
         ]);
 
         // rediirect ke view login
         return redirect()->to(base_url('/'));
-        // echo "berhasil";
     }
 }
