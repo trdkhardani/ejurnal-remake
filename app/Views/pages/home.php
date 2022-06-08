@@ -4,7 +4,7 @@
 <?= $this->section('content'); ?>
               <div id="breadcrumb">
                   <a href="<?= base_url(); ?>/">Home</a> &gt;
-                  <a href="<?= base_url(); ?>/" class="current">Information Technology Journal</a>
+                  <a href="<?= base_url(); ?>/" class="current">eJurnal</a>
                </div>
               <h2>eJurnal</h2>
               <div id="content">
