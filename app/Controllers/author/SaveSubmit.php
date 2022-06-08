@@ -15,6 +15,7 @@ class SaveSubmit extends BaseController
         if ($this->articlesModel->where('article_id', $articleID)->first() == NULL) {
           $data['article']['progress'] = $page;
           $data['article']['submitter_id'] = session()->get('user_id');
+          $data['article']['status'] = 'Incomplete';
           $this->articlesModel->insert($data['article']);
           $articleID = $this->articlesModel->getInsertID();
           $data['article_comments'] = [
