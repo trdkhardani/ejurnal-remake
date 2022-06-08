@@ -21,7 +21,7 @@ $username = "azril";
    <?php if (isset($page["title"])) : ?>
       <title><?= $page["title"]; ?></title>
    <?php else : ?>
-      <title>Information Technology Journal</title>
+      <title>eJurnal</title>
    <?php endif; ?>
 </head>
 
@@ -30,7 +30,7 @@ $username = "azril";
       <div id="header">
          <div id="headerTitle">
             <!-- Header Title berganti sesuai dengan judul halaman -->
-            <h1>Information Technology Journal</h1>
+            <h1 style="font-family: 'Brush Script MT', cursive;">eJurnal</h1>
          </div>
       </div>
       <!-- HEADER END -->
@@ -47,7 +47,7 @@ $username = "azril";
                </div>
 
                <!-- SidebarUser berganti ketika user sudah login -->
-               <form action="<?= base_url(); ?>/User/login" method="post">
+               <form action="<?= base_url(); ?>/Verify/verify_login" method="post">
                   <?= csrf_field(); ?>
 
                   <?php if (!empty(session()->get('username'))) : ?>
