@@ -47,7 +47,7 @@ $username = "azril";
                </div>
 
                <!-- SidebarUser berganti ketika user sudah login -->
-               <form action="<?= base_url(); ?>/Verify/verify_login" method="post">
+               <form action="<?= base_url(); ?>/User/login" method="post">
                   <?= csrf_field(); ?>
 
                   <?php if (!empty(session()->get('username'))) : ?>
