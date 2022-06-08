@@ -40,11 +40,12 @@ class ArticlesModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function joinAuthor()
+    public function joinSubmitterAuthor()
     {
         return $this
             ->select()
-            ->join('users', 'users.user_id=' . session()->get('user_id'), "right");
+            ->join('users', 'users.user_id=articles.submitter_id')
+            ->join('article_authors', 'article_authors.article_id=articles.article_id');
     }
 
     public function joinArticleAW()

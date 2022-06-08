@@ -39,4 +39,12 @@ class ArticleAuthorsModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function joinArticleAW($issue_id)
+    {
+        return $this
+            ->select()
+            ->join('article_authors', 'article_authors.article_id = articles.article_id')
+            ->where('issues.issue_id', $issue_id);
+    }
 }
