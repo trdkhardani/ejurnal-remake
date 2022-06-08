@@ -15,6 +15,6 @@ class notifyReviewer extends BaseController
             'date_assign_reviewer' => date('Y-m-d'),
             'round' => 1
         ]);
-        return redirect()->to(base_url(base_url() . '/editor/submissionReview/'.$article_id));
+        return redirect()->to(base_url('/editor/submissionReview/' . $article_id));
     }
 }
