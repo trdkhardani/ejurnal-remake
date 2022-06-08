@@ -16,10 +16,12 @@ class RecordRecommendation extends BaseController
     $data = [
       'recommendation' => $recommendation,
       'article_id' => $assignment["article_id"],
-      'reviewer_id' => $assignment["reviewer_id"]
+      'reviewer_id' => $assignment["reviewer_id"],
+      'date_submit' => date('Y-m-d')
     ];
 
     $this->reviewAssignmentsModel->whereIn('assignment_id', [$assignmentID])->set($data)->update();
+    $this->assignmenstModel->whereIn('assignment_id', [$assignmentID])->set(['round' => 2])->update();
 
     return redirect()->to(base_url() . '/reviewer/submission/' . $assignmentID);
   }

@@ -14,7 +14,7 @@ class ArticleLayoutFilesModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_layout_file_id', 'article_id', 'file_id', 'file_name', 'original_file_name', 'file_size', 'date_uploaded', 'uploader_id'];
+    protected $allowedFields    = ['article_layout_file_id', 'article_id', 'file_id', 'file_name', 'original_file_name', 'file_size', 'type', 'date_uploaded', 'uploader_id'];
 
     // Dates
     protected $useTimestamps = false;

@@ -10,7 +10,7 @@
 	<a href="<?= base_url(); ?>/editor/submissionReview/12687" class="current">Review</a>
 </div>
 
-<h2>#12687 Review</h2>
+<h2>#<?= $article['article_id']; ?> Review</h2>
 
 
 <div id="content">
@@ -123,7 +123,7 @@
 						</h4>
 					</td>
 					<td>
-						<a href="#">Clear Reviewer</a>
+						<a href="<?= base_url(); ?>/editor/clearReview/<?= $article['article_id']; ?>/<?= $assign_reviewer['user_id']; ?>">Clear Reviewer</a>
 					</td>
 				</tr>
 				<tr>
@@ -178,7 +178,7 @@
 					<tr>
 						<td>Recommendation</td>
 						<td colspan="4">
-							<?php if (isset($review_reviewer)) : ?>
+							<?php if (isset($recommendation)) : ?>
 								<!-- INI HARUSNYA DIISI RECOMMENDATION -->
 							<?php else : ?>
 								None
@@ -188,8 +188,8 @@
 					<tr>
 						<td>Review</td>
 						<td>
-							<?php if (isset($review_reviewer)) : ?>
-								<!-- INI HARUSNYA DIISI COMMENT -> REVIEWER TO EDITOR -->
+							<?php if (isset($comment_from_reviewer)) : ?>
+								<?= $comment_from_reviewer; ?>
 							<?php else : ?>
 								No Comments
 							<?php endif; ?>
@@ -198,8 +198,8 @@
 					<tr>
 						<td>Uploaded Files</td>
 						<td>
-							<?php if (isset($author_version_files)) : ?>
-								<!-- INI HARUSNYA DIISI FILE_NAME AUTHOR -->
+							<?php if (isset($reviewer_version)) : ?>
+								<?= $reviewer_version['file_name']; ?>
 							<?php else : ?>
 								None
 							<?php endif; ?>
@@ -264,7 +264,12 @@
 					<?php endif; ?>
 				</td>
 			</tr>
+
+			<!-- FORM UNTUK SEND TO COPYEDITING -->
 			<form method="post" action="<?= base_url(); ?>/editor/editorReview" enctype="multipart/form-data">
+				<input type="hidden" name="article_id" value="<?= $article['article_id']; ?>">
+				<!-- FORM UNTUK SEND TO COPYEDITING -->
+
 				<tr valign="top">
 					<td class="label">Notify Author</td>
 					<td class="value">
@@ -296,20 +301,18 @@
 				</tr>
 		</table>
 
-		<input type="hidden" name="articleId" value="12687" />
-
 		<table id="table2" class="data" width="100%">
 			<tr valign="top">
 				<td width="20%" class="label">Review Version</td>
 				<td width="80%" class="nodata">
 					<?php if (isset($review_version)) : ?>
 						<?php if (isset($notified)) : ?>
-							<input type="radio" name="editorDecisionFile">
-							<a href="#">
+							<input type="radio" name="editorDecisionFile" value="<?= $review_version['article_revision_file_id']; ?>">
+							<a href="/editor/downloadFile/<?= $review_version['file_id'] ?>">
 								<?= $review_version['file_name']; ?>
 							</a>
 						<?php else : ?>
-							<a href="#">
+							<a href="/editor/downloadFile/<?= $review_version['file_id'] ?>">
 								<?= $review_version['file_name']; ?>
 							</a>
 						<?php endif; ?>
@@ -323,12 +326,12 @@
 				<td width="80%" class="nodata">
 					<?php if (isset($author_version)) : ?>
 						<?php if (isset($notified)) : ?>
-							<input type="radio" name="editorDecisionFile">
-							<a href="#">
+							<input type="radio" name="editorDecisionFile" value="<?= $author_version['article_revision_file_id']; ?>">
+							<a href="/editor/downloadFile/<?= $author_version['file_id'] ?>">
 								<?= $author_version['file_name']; ?>
 							</a>
 						<?php else : ?>
-							<a href="#">
+							<a href="/editor/downloadFile/<?= $author_version['file_id'] ?>">
 								<?= $author_version['file_name']; ?>
 							</a>
 						<?php endif; ?>
@@ -342,12 +345,12 @@
 				<td width="80%" class="nodata">
 					<?php if (isset($editor_version)) : ?>
 						<?php if (isset($notified)) : ?>
-							<input type="radio" name="editorDecisionFile">
-							<a href="#">
+							<input type="radio" name="editorDecisionFile" value="<?= $editor_version['article_revision_file_id']; ?>">
+							<a href="/editor/downloadFile/<?= $editor_version['file_id'] ?>">
 								<?= $editor_version['file_name']; ?>
 							</a>
 						<?php else : ?>
-							<a href="#">
+							<a href="/editor/downloadFile/<?= $editor_version['file_id'] ?>">
 								<?= $editor_version['file_name']; ?>
 							</a>
 						<?php endif; ?>
@@ -356,16 +359,19 @@
 					<?php endif; ?>
 				</td>
 			</tr>
+			</form>
 			<tr valign="top">
 				<td class="label">&nbsp;</td>
-				<td class="value">
-					<input type="file" name="upload" class="uploadField" />
-					<input type="submit" name="upload" value="Upload" class="button" />
-				</td>
+				<form action="<?= base_url(); ?>/editor/uploadEditorVersion" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="article_id" value="<?= $article['article_id']; ?>">
+					<td class="value">
+						<input type="file" name="file_name" class="uploadField" />
+						<input type="submit" name="upload" value="Upload" class="button" />
+					</td>
+				</form>
 			</tr>
 
 		</table>
-		</form>
 	</div>
 
 

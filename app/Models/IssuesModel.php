@@ -14,7 +14,7 @@ class IssuesModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['issue_id', 'volume', 'number', 'year', 'title', 'description'];
+    protected $allowedFields    = ['issue_id', 'volume', 'number', 'year', 'title', 'description', 'status'];
 
     // Dates
     protected $useTimestamps = true;

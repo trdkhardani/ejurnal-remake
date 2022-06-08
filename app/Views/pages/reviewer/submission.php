@@ -69,11 +69,11 @@
 			</tr>
 			<tr valign="top">
 				<td class="label">Your Response</td>
-				<td class="value">&mdash;</td>
+				<td class="value"><?= isset($date_response) ? $date_response : '&mdash;'; ?></td>
 			</tr>
 			<tr valign="top">
 				<td class="label">Review Submitted</td>
-				<td class="value">&mdash;</td>
+				<td class="value"><?= isset($date_submit) ? $date_submit : '&mdash;'; ?></td>
 			</tr>
 		</table>
 	</div>

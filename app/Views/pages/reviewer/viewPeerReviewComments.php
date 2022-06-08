@@ -114,36 +114,26 @@
                   <tr valign="top">
                     <td width="25%">
                       <div class="commentRole">
-                        Editor
+                        Reviewer
                       </div>
-                      <!-- <div class="commentDate">2022-06-03 07:19 PM</div> -->
-                      <br />
                       <div class="commentNote">
                         For author and editor
                       </div>
                     </td>
                     <td width="75%">
-                      <div id="6073"></a>
-                        <!-- <div class="commentTitle">Subject: tesdt</div> -->
-                      </div>
                       <div class="comments"><?= $comment["reviewer_to_author"]; ?></div>
                     </td>
                   </tr>
                   <tr valign="top">
                     <td width="25%">
                       <div class="commentRole">
-                        Editor
+                        Reviewer
                       </div>
-                      <!-- <div class="commentDate">2022-06-03 07:19 PM</div> -->
-                      <br />
                       <div class="commentNote">
                         For editor
                       </div>
                     </td>
                     <td width="75%">
-                      <div id="6074"></a>
-                        <!-- <div class="commentTitle">Subject: tesdt</div> -->
-                      </div>
                       <div class="comments"><?= $comment["reviewer_to_editor"]; ?></div>
                     </td>
                   </tr>

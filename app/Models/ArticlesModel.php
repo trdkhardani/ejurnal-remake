@@ -14,7 +14,7 @@ class ArticlesModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status', 'date_submit', 'issue_id'];
+    protected $allowedFields    = ['article_id', 'title', 'abstract', 'keyword', 'language', 'support', 'reference', 'progress', 'status', 'submitter_id', 'date_submit', 'issue_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,10 +40,11 @@ class ArticlesModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function joinAuthor() {
+    public function joinAuthor()
+    {
         return $this
             ->select()
-            ->join('article_authors', 'article_authors.article_id=articles.article_id', "right"); 
+            ->join('users', 'users.user_id=' . session()->get('user_id'), "right");
     }
 
     public function joinArticleAW()

@@ -8,12 +8,13 @@ class SaveSubmit extends BaseController
 {
   public function index($page = 1, $articleID = 0)
   {
-    switch($page) {
+    switch ($page) {
       case 1:
         $article_comments = $this->request->getPost()['commentsToEditor'];
-        
-        if($this->articlesModel->where('article_id', $articleID)->first() == NULL) {
+
+        if ($this->articlesModel->where('article_id', $articleID)->first() == NULL) {
           $data['article']['progress'] = $page;
+          $data['article']['submitter_id'] = session()->get('user_id');
           $this->articlesModel->insert($data['article']);
           $articleID = $this->articlesModel->getInsertID();
           $data['article_comments'] = [
@@ -25,28 +26,28 @@ class SaveSubmit extends BaseController
         } else {
           $articleID = $articleID;
         }
-        
-        return redirect()->to(base_url() . '/author/submit/2/'.$articleID); 
+
+        return redirect()->to(base_url() . '/author/submit/2/' . $articleID);
         break;
 
       case 2:
         $validationRule = [
           'submissionFile' => [
-              'label' => 'Submission File',
-              'rules' => 'uploaded[submissionFile]'
-                  . '|mime_in[submissionFile,application/pdf]'
+            'label' => 'Submission File',
+            'rules' => 'uploaded[submissionFile]'
+              . '|mime_in[submissionFile,application/pdf]'
           ],
         ];
 
-        if(!$this->validate($validationRule)) {
-          return redirect()->to(base_url() . '/author/submit/2/'.$articleID.'?error=pdf+only');
+        if (!$this->validate($validationRule)) {
+          return redirect()->to(base_url() . '/author/submit/2/' . $articleID . '?error=pdf+only');
         }
 
         $file = $this->request->getFile('submissionFile');
 
-        if($file != NULL) {
+        if ($file != NULL) {
           $data['article_submission_file']['article_id'] = $articleID;
-          
+
           $this->filesModel->insert([
             'path' => ''
           ]);
@@ -69,20 +70,20 @@ class SaveSubmit extends BaseController
             'path' => 'uploads/author/' . $articleID . '/' . $fileID . '/' . $articleID . '-' . $fileID . '-' . $count . '-SM.pdf'
           ];
 
-          
-          if($this->articleSubmissionFilesModel->update($articleSubmissionFileID, $data['article_submission_file']) && $this->filesModel->update($fileID, $data['file'])) {
+
+          if ($this->articleSubmissionFilesModel->update($articleSubmissionFileID, $data['article_submission_file']) && $this->filesModel->update($fileID, $data['file'])) {
             $file->store('author/' . $articleID . '/' . $fileID, $data['article_submission_file']['file_name']);
           }
 
           $data['article']['progress'] = $page;
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to(base_url() . '/author/submit/2/'.$articleID);
+          return redirect()->to(base_url() . '/author/submit/2/' . $articleID);
         }
         break;
       case 3:
         $post = $this->request->getPost();
-        if(isset($post['submitArticle'])) {
+        if (isset($post['submitArticle'])) {
           $author = $post['authors'][0];
 
           $data['authors'] = [
@@ -98,10 +99,10 @@ class SaveSubmit extends BaseController
           ];
 
           // Jika belum submit pertama kali
-          if(strlen($author['authorId']) == 0) {  
+          if (strlen($author['authorId']) == 0) {
             // Submit Author First
             $this->articleAuthorsModel->insert($data['authors']);
-            
+
             // Lalu, ambil author_id
             $authorID = $this->articleAuthorsModel->getInsertID();
           } else {
@@ -119,31 +120,31 @@ class SaveSubmit extends BaseController
             'support' => $article['sponsor'],
             'reference' => $article['references'],
             'progress' => $page
-          ];  
+          ];
 
-          
+
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to(base_url() . '/author/submit/4/'.$articleID);
-        } 
+          return redirect()->to(base_url() . '/author/submit/4/' . $articleID);
+        }
         break;
 
       case 4:
         $validationRule = [
           'submissionSuppFile' => [
-              'label' => 'Submission Supplementary File',
-              'rules' => 'uploaded[uploadSuppFile]'
-                  . '|mime_in[uploadSuppFile,application/pdf]'
+            'label' => 'Submission Supplementary File',
+            'rules' => 'uploaded[uploadSuppFile]'
+              . '|mime_in[uploadSuppFile,application/pdf]'
           ],
         ];
 
-        if(!$this->validate($validationRule)) {
-          return redirect()->to(base_url() . '/author/submit/4/'.$articleID.'?error=pdf+only');
+        if (!$this->validate($validationRule)) {
+          return redirect()->to(base_url() . '/author/submit/4/' . $articleID . '?error=pdf+only');
         }
 
         $file = $this->request->getFile('uploadSuppFile');
-        
-        if($file != NULL) {
+
+        if ($file != NULL) {
           // Buat article_id baru
           $data['article_supplementary_file']['article_id'] = $articleID;
 
@@ -151,10 +152,10 @@ class SaveSubmit extends BaseController
             'path' => ''
           ]);
           $this->articleSupplementaryFilesModel->insert($data['article_supplementary_file']);
-          
+
           $fileID = $this->filesModel->getInsertID();
           $articleSupplementaryFileID = $this->articleSupplementaryFilesModel->getInsertID();
-          
+
           $count = count($this->articleSupplementaryFilesModel->where('article_id', $articleID)->findAll());
 
           // Update fileinfo menggunakan submission id
@@ -166,29 +167,29 @@ class SaveSubmit extends BaseController
             'file_address' => 'uploads/author/' . $articleID . '/' . $fileID . '/' . $articleID . '-' . $fileID . '-' . $count . '-SP.pdf'
           ];
 
-          if($this->articleSupplementaryFilesModel->update($articleSupplementaryFileID, $data['article_supplementary_file'])) {
+          if ($this->articleSupplementaryFilesModel->update($articleSupplementaryFileID, $data['article_supplementary_file'])) {
             $file->store('author/' . $articleID . '/' . $fileID, $data['article_supplementary_file']['file_name']);
           }
 
           $data['article']['progress'] = $page;
           $this->articlesModel->update($articleID, $data['article']);
 
-          return redirect()->to(base_url() . '/author/submit/4/'.$articleID);
+          return redirect()->to(base_url() . '/author/submit/4/' . $articleID);
         }
         break;
-        
+
       case 5:
         $this->articlesModel->whereIn('article_id', [$articleID])->set(['status' => 'Waiting Assignment'])->update();
 
         $data['article']['progress'] = $page;
         $data['article']['date_submit'] = date("Y-m-d H:i:s");
         $this->articlesModel->update($articleID, $data['article']);
-        
+
         return redirect()->to(base_url() . '/author/');
         break;
     }
 
-    if($page != 1 && $this->articlesModel->where('article_id', $articleID)->first() == NULL) {
+    if ($page != 1 && $this->articlesModel->where('article_id', $articleID)->first() == NULL) {
       return redirect()->to(base_url() . '/author/submit/1');
     }
   }

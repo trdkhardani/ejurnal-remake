@@ -8,6 +8,9 @@ class SubmissionsInEditing extends BaseController
 {
     public function index()
     {
-        return view('pages/editor/submissions/submissionsInEditing');
+        $data = [
+            'article' => $this->articlesModel->joinArticleIE()->findAll()
+        ];
+        return view('pages/editor/submissions/submissionsInEditing', $data);
     }
 }

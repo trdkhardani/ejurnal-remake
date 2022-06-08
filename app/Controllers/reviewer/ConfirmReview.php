@@ -21,7 +21,8 @@ class ConfirmReview extends BaseController
       'article_id' => $assignment["article_id"],
       'assignment_id' => $assignment_id,
       'reviewer_id' => session()->get('user_id'),
-      'response' => 1
+      'response' => 1,
+      'date_response' => date('Y-m-d')
     ];
 
     $this->reviewAssignmentsModel->insert($data);

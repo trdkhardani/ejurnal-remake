@@ -8,7 +8,6 @@ class SubmissionsUnassigned extends BaseController
 {
     public function index()
     {
-        // dd($this->articlesModel->joinArticleAW()->findAll());
         $data = [
             'article' => $this->articlesModel->joinArticleAW()->findAll()
         ];

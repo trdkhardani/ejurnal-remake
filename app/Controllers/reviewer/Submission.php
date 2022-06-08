@@ -20,6 +20,8 @@ class Submission extends BaseController
     if ($review_assign = $this->reviewAssignmentsModel->where('article_id', $data["assignment"]["article_id"])->where('reviewer_id', session()->get('user_id'))->first()) {
       $data["reviewer_response"] = $review_assign["response"];
       $data["reviewer_recommendation"] = $review_assign["recommendation"];
+      $data["date_response"] = $review_assign["date_response"];
+      $data["date_submit"] = $review_assign["date_submit"];
     }
 
     if ($fileinfo = $this->articleRevisionFilesModel->where('article_id', $data["assignment"]["article_id"])->where('type', 4)->orderBy('article_revision_file_id', 'desc')->first()) {

@@ -44,6 +44,7 @@ $routes->get('/author/submit/(:num)', 'Author\Submit::index/$1');
 $routes->get('/author/submit/(:num)/(:num)', 'Author\Submit::index/$1/$2');
 $routes->add('/author/saveSubmit/(:num)', 'Author\SaveSubmit::index/$1');
 $routes->add('/author/saveSubmit/(:num)/(:num)', 'Author\SaveSubmit::index/$1/$2');
+$routes->get('/author/deleteSubmission/(:num)', 'Author\DeleteSubmission::index/$1');
 
 $routes->get('/editor/submissions/(:num)', 'Editor\Submissions\Home::index/$1');
 $routes->get('/editor/submissions/assignEditor/(:num)/(:num)', 'Editor\Submissions\AssignEditor::index/$1/$2');
@@ -57,6 +58,14 @@ $routes->add('/editor/notifyReviewer/(:num)/(:num)', 'Editor\notifyReviewer::ind
 $routes->get('/editor/emailEditorDecisionComment/(:num)', 'Editor\emailEditorDecisionComment::index/$1');
 $routes->get('/editor/viewEditorDecisionComments/(:num)', 'Editor\viewEditorDecisionComments::index/$1');
 $routes->get('/editor/deleteComment/(:num)', 'Editor\deleteComment::index/$1');
+$routes->get('/editor/clearReview/(:num)/(:num)', 'Editor\clearReview::index/$1/$2');
+$routes->get('/editor/removeIssue/(:num)', 'Editor\removeIssue::index/$1');
+$routes->add('/editor/scheduleForPublication/(:num)', 'Editor\scheduleForPublication::index/$1');
+$routes->add('/editor/setDatePublished/(:num)', 'Editor\setDatePublished::index/$1');
+$routes->add('/editor/issueToc/(:num)', 'Editor\issueToc::index/$1');
+$routes->add('/editor/updateIssueToc/(:num)', 'Editor\updateIssueToc::index/$1');
+
+$routes->get('/issue/view/(:num)', 'Issue\view::index/$1');
 
 $routes->get('/reviewer/submission/(:num)', 'Reviewer\Submission::index/$1');
 $routes->get('/reviewer/confirmReview/accept/(:num)', 'Reviewer\ConfirmReview::accept/$1');

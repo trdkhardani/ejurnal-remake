@@ -31,14 +31,54 @@ class SubmissionReview extends BaseController
                     $data['notified'] = $notified;
                 }
             }
+
+            if ($recommendation = $this->reviewAssignmentsModel->where('article_id', $article_id)->first()) {
+                $data['sementara'] = $recommendation;
+            }
         }
 
-        if ($review_version = $this->articleRevisionFilesModel->where('article_id', $article_id)->orderBy('article_revision_file_id', 'desc')->first()) {
+        $type_review_version = [
+            'type' => 1,
+            'article_id' => $article_id
+        ];
+
+        $type_editor_version = [
+            'type' => 2,
+            'article_id' => $article_id
+        ];
+
+        $type_author_version = [
+            'type' => 3,
+            'article_id' => $article_id
+        ];
+
+        $type_reviewer_version = [
+            'type' => 4,
+            'article_id' => $article_id
+        ];
+
+        if ($review_version = $this->articleRevisionFilesModel->where($type_review_version)->orderBy('article_revision_file_id', 'desc')->first()) {
             $data['review_version'] = $review_version;
+        }
+
+        if ($editor_version = $this->articleRevisionFilesModel->where($type_editor_version)->orderBy('article_revision_file_id', 'desc')->first()) {
+            $data['editor_version'] = $editor_version;
+        }
+
+        if ($author_version = $this->articleRevisionFilesModel->where($type_author_version)->orderBy('article_revision_file_id', 'desc')->first()) {
+            $data['author_version'] = $author_version;
+        }
+
+        if ($reviewer_version = $this->articleRevisionFilesModel->where($type_reviewer_version)->orderBy('article_revision_file_id', 'desc')->first()) {
+            $data['reviewer_version'] = $reviewer_version;
         }
 
         if ($this->articleCommentsModel->where('article_id', $article_id)->findColumn('editor_to_author')[0]) {
             $data['editorToAuthor'] = $this->articleCommentsModel->where('article_id', $article_id)->findColumn('editor_to_author');
+        }
+
+        if ($reviewer_to_editor = $this->articleCommentsModel->where('article_id', $article_id)->findColumn('reviewer_to_editor')[0]) {
+            $data['comment_from_reviewer'] = $reviewer_to_editor;
         }
 
         $data['article'] = $this->articlesModel->joinArticleAuthorFiles($article_id)->first();

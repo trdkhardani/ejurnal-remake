@@ -8,6 +8,11 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('pages/editor/home');
+        $data = [
+            'submissionUnAssigned' => count($this->articlesModel->joinArticleAW()->findAll()),
+            'submissionInReview' => count($this->articlesModel->joinArticleIR()->findAll()),
+            'submissionInEditing' => count($this->articlesModel->joinArticleIE()->findAll())
+        ];
+        return view('pages/editor/home', $data);
     }
 }
