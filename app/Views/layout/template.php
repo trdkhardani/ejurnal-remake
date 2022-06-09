@@ -76,6 +76,7 @@ $username = "azril";
                            <td><input type="password" class="search_box" name="password" id="password"></td>
                         </tr>
                      </table>
+                     <h5>Don't have an account yet? <a href="<?= base_url(); ?>/Register">Click here</a></h5>
                      <input type="checkbox" id="remember" name="remember" value="Remember me"> Remember me <br>
                      <button type="submit">Login</button>
                   <?php endif; ?>
